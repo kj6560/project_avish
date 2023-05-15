@@ -1,0 +1,217 @@
+<?php
+
+namespace App\Http\Controllers\site;
+
+use App\Http\Controllers\Controller;
+use App\Models\Email;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
+
+class SiteController extends Controller
+{
+    public function index(Request $request)
+    {
+        return view('site.index');
+    }
+    public function login(Request $request)
+    {
+        return view('site.login');
+    }
+
+    public function loginAuthentication(Request $request)
+    {
+        $data = $request->all();
+
+        if (!empty($data) && $data['email'] && $data['password']) {
+            $attemptData = array("email" => $data['email'], "password" => $data['password']);
+            if (Auth::attempt($attemptData)) {
+                $request->session()->regenerate();
+                return redirect()->route('home');
+            } else {
+                return back()->withErrors([
+                    'errors' => 'user authentication failed.',
+                ]);
+            }
+        } else if (!empty($data) && $data['email']) {
+            return back()->withErrors([
+                'email' => 'plz enter valid email and password.',
+            ])->onlyInput('email');
+        }
+    }
+    public function register(Request $request)
+    {
+        return view('site.register');
+    }
+
+    public function createUser(Request $request)
+    {
+        $data = $request->all();
+        if (!empty($data) && $data['email'] && $data['password']) {
+
+            $credentials = $request->validate([
+                'first_name' => ['required', 'string'],
+                'last_name' => ['required', 'string'],
+                'number' => ['required', 'string'],
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ]);
+
+            if ($credentials) {
+                $user = User::where("email", $data['email'])->first();
+                if (empty($user))
+                    $user = User::create([
+                        'first_name' => $data['first_name'],
+                        'last_name' => $data['last_name'],
+                        'number' => $data['number'],
+                        'email' => $data['email'],
+                        'email_verified_at' => now(),
+                        'password' => Hash::make($data['password'])
+                    ]);
+                else
+                    return back()->withErrors([
+                        'email' => 'user already exists.',
+                    ])->onlyInput('email');
+                if ($user)
+                    return redirect("login");
+            }
+        } else {
+            echo "not post";
+        }
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
+    public function forgot(Request $request)
+    {
+
+        return view('site.forgot');
+    }
+    public function forgotPasswordUser(Request $request)
+    {
+        $data = $request->all();
+        $email = $data['email'];
+        if (!empty($email)) {
+            $user = User::where("email", $email)->first();
+            if ($user) {
+                $user_name = $user->first_name . " " . $user->last_name;
+                $payload = "email=" . $email;
+                $payload = Crypt::encryptString($payload);
+                $link = env("APP_URL", "") . "/reset?t=" . $payload;
+                $subject = "Reset Your Password";
+                $site_phone = env("PHONE", "9599362404");
+                $site_name = env("SITE_NAME", "UNIV SPORTA");
+                $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
+                $message = "
+                <p>Dear $user_name,</p><br>
+ 
+                <p>We have received a request to reset your password for your account on $site_name.
+                <br>To reset your password,please follow the instructions below:
+                <br>Click on $link.
+                <br>Enter new password
+                 
+                <br>If you did not make this request or believe someone else may have accessed your account, please contact us 
+                immediately at $site_phone. 
+                <br>We take the security of our users' accounts very seriously and will work with you to ensure your account remains 
+                secure.
+                                 
+                <br>Thank you for your attention to this matter, and please do not hesitate to contact us if you have any questions or 
+                concerns.</p>
+                 
+                <br>Best regards,
+                 
+                <br>$email_sender_name <br>
+                $site_name
+            ";
+                $mailData = array("email" => $email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
+                $sent = Email::sendEmail($mailData);
+                if ($sent) {
+                    return redirect()->back()->with('success', 'Email sent to your registered email id. please check your email and follow the instructions.');
+                }
+            } else {
+                echo "user not found";
+            }
+        } else {
+        }
+    }
+    public function resetPassword(Request $request)
+    {
+        $data = $request->all();
+        $t = $data['t'];
+        $payload = Crypt::decryptString($t);
+        $email = "";
+        if (!empty(explode("=", $payload)[1]) && filter_var(explode("=", $payload)[1], FILTER_VALIDATE_EMAIL)) {
+            $email = $t;
+        }
+        return view('site.resetPassword', ["email" => $email]);
+    }
+    public function resetPasswordUser(Request $request)
+    {
+        $data = $request->all();
+        $email = "";
+        if (!empty($data['email']) && !empty($data['password1']) && !empty($data['password2'])) {
+            $email = Crypt::decryptString($data['email']);
+            $email = explode("=", $email)[1];
+            $password1 = $data['password1'];
+            $password2 = $data['password2'];
+            if (strcmp($password1, $password2) == 0) {
+                $user = User::where(["email" => $email])->first();
+                if ($user) {
+                    $user->password = Hash::make($data['password1']);
+                    if ($user->save()) {
+                        return redirect()->back()->with('success', 'Your Password has been updated succcessfully. Please continue to login.');
+                    } else {
+                        return redirect()->back()->with('error', 'Something went wrong');
+                    }
+                } else {
+                    return redirect()->back()->with('error', 'No user found with the given email ' . $email);
+                }
+            } else {
+                return redirect()->back()->with('error', 'Passwords donot match');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Please enter both passwords');
+        }
+    }
+    public function subscribe(Request $request)
+    {
+        $data = $request->all();
+        $email = $data['email'];
+        if (empty($email)) {
+            return redirect()->back()->with('error', 'plz enter email');
+        }
+
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $subject = "Subscribe for Updates";
+            $site_name = env("SITE_NAME", "UNIV SPORTA");
+            $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
+            $message = "
+                <p>Dear Subscriber,</p><br>
+ 
+                <p>I am writing this email to express my gratitude for subscribing to our updates email. We appreciate your interest in our UNIV SPORTA TECH, and we are committed to keeping you informed about our latest developments.</p>
+                <p>As a subscriber, you will receive regular updates on our events. We value your privacy, and we will never share your information with third parties.</p>
+                <p>We understand that your time is valuable, and we will make sure that the emails you receive from us are informative and useful. We welcome your feedback and suggestions and are always looking for ways to improve our communication with our subscribers.</p>
+                <p>If you ever want to unsubscribe or update your email preferences, you can do so by clicking on the \"unsubscribe\" link at the bottom of any of our emails.</p>
+                <p>Once again, thank you for subscribing to our updates email. We look forward to sharing our news and offerings with you.</p>
+
+                <br>Best regards,
+                 
+                <br>$email_sender_name <br>
+                $site_name
+            ";
+            $mailData = array("email" => $email, "first_name" => "subscriber", "last_name" => "", "subject" => $subject, "message" => $message);
+            $sent = Email::sendEmail($mailData);
+            if ($sent) {
+                return redirect()->back()->with('success', 'You have successfully subscribed to our updates email. Please check your email regularly and stay updated.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Please enter valid email');
+        }
+    }
+}
