@@ -1,55 +1,55 @@
-/*
-	Template Name: exhibz
-	Author: Themewinter
-	Author URI: https://themeforest.net/user/tripples
-	Description: Exhibz conference html template. 
-  Version: 1.1
-
-=====================
-   table of content 
-====================
-
-1.   Typography
-2.   Global Styles
-3.   header nav
-4.   hero area
-5    intro area
-6.   ts speakers area
-7.   experiyence area
-8.   schedule area 
-9.   pricing area 
-10.  blog area 
-11.  sponsros area 
-12.  map direction area 
-13.  newsletter area 
-14.  footer area 
-15.  funfact area 
-16.  contact area 
-17.  blog details area 
-18.  about area 
-19.  faq area 
-20.  404  
+/*
+	Template Name: exhibz
+	Author: Themewinter
+	Author URI: https://themeforest.net/user/tripples
+	Description: Exhibz conference html template. 
+  Version: 1.1
+
+=====================
+   table of content 
+====================
+
+1.   Typography
+2.   Global Styles
+3.   header nav
+4.   hero area
+5    intro area
+6.   ts speakers area
+7.   experiyence area
+8.   schedule area 
+9.   pricing area 
+10.  blog area 
+11.  sponsros area 
+12.  map direction area 
+13.  newsletter area 
+14.  footer area 
+15.  funfact area 
+16.  contact area 
+17.  blog details area 
+18.  about area 
+19.  faq area 
+20.  404  
 */
-/*
-	Template Name: Exhibit -  Conference & Event HTML Template
-	Author: Themewinter
-	Author URI: https://themeforest.net/user/tripples
-	Description: Eventor -  Conference & Event HTML Template
-	Version: 1.0
+/*
+	Template Name: Exhibit -  Conference & Event HTML Template
+	Author: Themewinter
+	Author URI: https://themeforest.net/user/tripples
+	Description: Eventor -  Conference & Event HTML Template
+	Version: 1.0
 */
-/* Table of Content
-==================================================
-1.	Typography
-2.  Global Styles (body, link color, gap, ul, section-title, overlay etc)
-3.  Header area
-4.	Banner area
-
-	
+/* Table of Content
+==================================================
+1.	Typography
+2.  Global Styles (body, link color, gap, ul, section-title, overlay etc)
+3.  Header area
+4.	Banner area
+
+	
 */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 /* ============================== */
-/* Typography
+/* Typography
 ================================================== */
 body,
 p {
@@ -94,7 +94,7 @@ h5 {
   font-size: 14px;
   line-height: 24px; }
 
-/* Global styles
+/* Global styles
 ================================================== */
 html {
   overflow-x: hidden !important;
@@ -430,8 +430,8 @@ img.pull-right {
   color: #ff057c !important; }
 
 /*  */
-/*==========================
-      header area
+/*==========================
+      header area
 ===========================*/
 .header .navbar {
   padding: 10px 0; }
@@ -586,8 +586,8 @@ img.pull-right {
     display: block;
     border: none; } }
 
-/*==========================
-      hero area
+/*==========================
+      hero area
 ===========================*/
 .hero-area {
   padding: 0; }
@@ -1027,8 +1027,8 @@ img.pull-right {
   transition: transform .5s ease-out;
   transition: transform .5s ease-out, -webkit-transform .5s ease-out; }
 
-/*==========================
-      intro area
+/*==========================
+      intro area
 ===========================*/
 .ts-intro {
   padding: 80px 0 60px; }
@@ -1158,8 +1158,8 @@ img.pull-right {
     .ts-intro.event-intro .single-intro-text:hover {
       background: #120f4e; }
 
-/*==========================
-     ts speaker
+/*==========================
+     ts speaker
 ===========================*/
 .ts-speakers {
   padding-top: 120px;
@@ -1325,8 +1325,8 @@ img.pull-right {
   .ts-speaker-popup button.mfp-close {
     font-size: 30px; }
 
-/*==========================
-     ts-experiences
+/*==========================
+     ts-experiences
 ===========================*/
 .ts-experiences {
   padding: 0;
@@ -1391,8 +1391,8 @@ img.pull-right {
         top: -20px;
         position: relative; }
 
-/*============================
- ts schedule 
+/*============================
+ ts schedule 
  ===========================*/
 .ts-schedule-info {
   position: relative; }
@@ -1689,8 +1689,8 @@ img.pull-right {
     .box-style .row .item:nth-child(3):hover ~ .indicator {
       left: 66.6666666%; } }
 
-/*====================================
-      ts-pricing
+/*====================================
+      ts-pricing
 =====================================*/
 .ts-pricing {
   background-repeat: no-repeat;
@@ -1892,8 +1892,8 @@ img.pull-right {
   .pricing-wrap .pricing-item .ts-pricing-box .pricing-btn:after {
     background: #120f4e; }
 
-/*=================================
-   blog
+/*=================================
+   blog
  =================================*/
 .ts-blog {
   padding-bottom: 70px; }
@@ -2011,8 +2011,8 @@ img.pull-right {
     line-height: 26px;
     color: #888888; }
 
-/*==========================
-      sponsors
+/*==========================
+      sponsors
 ============================*/
 .ts-intro-sponsors {
   background-repeat: no-repeat;
@@ -2021,8 +2021,8 @@ img.pull-right {
   .ts-intro-sponsors .sponsors-logo img {
     margin: 0 38px 50px; }
 
-/*==========================
-      map direction
+/*==========================
+      map direction
 ============================*/
 .ts-map-direction .speaker-shap .shap4 {
   left: auto;
@@ -2176,8 +2176,8 @@ img.pull-right {
 .direction-tabs-content p.derecttion-vanue {
   margin-bottom: 30px; }
 
-/*====================================
-         ts-book-seat
+/*====================================
+         ts-book-seat
  ====================================*/
 .ts-book-seat {
   background-repeat: no-repeat;
@@ -2212,8 +2212,8 @@ img.pull-right {
       color: #fff;
       margin-bottom: 20px; }
 
-/*====================================
-         ts newsletter
+/*====================================
+         ts newsletter
  ====================================*/
 .ts-footer-newsletter {
   position: relative; }
@@ -2283,8 +2283,8 @@ img.pull-right {
       .newsletter-form .email-form-group .form-control::placeholder {
         color: #fff; }
 
-/*================================
-      ts-footer
+/*================================
+      ts-footer
  ==================================*/
 .ts-footer {
   background: #1a1831;
@@ -2365,8 +2365,8 @@ img.pull-right {
   .ts-footer.ts-footer-item .copyright-text p {
     color: #fff; }
 
-/*==================================
-   ts funfact 
+/*==================================
+   ts funfact 
  ==================================*/
 .ts-funfact {
   background-repeat: no-repeat;
@@ -2396,8 +2396,8 @@ img.pull-right {
     color: #fff;
     padding-bottom: 30px; }
 
-/*=================================
-      ts-intro-outcome
+/*=================================
+      ts-intro-outcome
 =================================*/
 .ts-intro-outcome {
   background-repeat: no-repeat;
@@ -2556,7 +2556,7 @@ img.pull-right {
   top: 50%;
   opacity: .4; }
 
-/* Sponsors
+/* Sponsors
 ================================================== */
 .ts-sponsors .sponsor-padding {
   padding-left: 30px;
@@ -2598,7 +2598,7 @@ img.pull-right {
   .ts-sponsors.sponsors-border .sponsors-wrap {
     border-bottom: 1px solid #2e2b72; }
 
-/* Contact
+/* Contact
 ================================================== */
 .ts-contact .single-contact-feature {
   -webkit-box-shadow: none;
@@ -2618,7 +2618,7 @@ img.pull-right {
     font-size: 14px;
     resize: none; }
 
-/* Blog Details
+/* Blog Details
 ================================================== */
 .blog-details .entry-header {
   padding: 0px 80px;
@@ -2902,7 +2902,7 @@ blockquote:before {
   .comments-form .btn.btn-primary {
     margin-top: 20px; }
 
-/* about
+/* about
 ===================================================*/
 .about-intro-text i {
   font-size: 64px;
@@ -2987,8 +2987,8 @@ blockquote:before {
     .ts-event-outcome.event-intro .outcome-content .column-title span {
       color: #222222; }
 
-/*================================
-faq-item
+/*================================
+faq-item
 ====================================*/
 .faq-item .faq-list {
   margin-bottom: 20px; }
@@ -3121,7 +3121,7 @@ faq-item
     border-color: #e7015e;
     color: #fff; }
 
-/* Error page
+/* Error page
 ================================================== */
 .error-page .error-code h2 {
   display: block;
@@ -3134,8 +3134,8 @@ faq-item
   margin-top: 30px;
   font-weight: 700; }
 
-/* =================
-// Exprience 
+/* =================
+// Exprience 
 =====================*/
 .ts-exprience {
   position: relative;

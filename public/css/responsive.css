@@ -1,5 +1,5 @@
-/*==========================
-tab rotate 
+/*==========================
+tab rotate 
 ===========================*/
 @media (min-width: 992px) and (max-width: 1200px) {
   .header ul.navbar-nav > li > a {
@@ -44,8 +44,8 @@ tab rotate
   .ts-exp-wrap .ts-exp-content .column-title {
     font-size: 32px; } }
 
-/*==========================
-tab device 
+/*==========================
+tab device 
 ===========================*/
 @media (min-width: 768px) and (max-width: 991px) {
   .dropdown-menu.show {
@@ -251,8 +251,8 @@ tab device
     position: static;
     margin: 0px; } }
 
-/*==========================
-small device /mobile sm and large
+/*==========================
+small device /mobile sm and large
 ===========================*/
 @media (max-width: 767px) {
   .dropdown-menu.show {

@@ -70,7 +70,29 @@ class SiteController extends Controller
                         'email_verified_at' => now(),
                         'password' => Hash::make($data['password'])
                     ]);
-                else
+                if ($user) {
+                    $user_name = $user->first_name . " " . $user->last_name;
+                    $site_name = env("SITE_NAME", "UNIV SPORTA");
+                    $subject = "Welcome to $site_name";
+                    $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
+                    $message = "
+                    <p>Dear $user_name,</p><br>
+                    <p>Thank you for registering with us! We are thrilled to welcome you to our community and appreciate your interest
+                    in our Univ.<br>Your registration has been successfully processed, and you are now a valued member of our platform.
+                    <br>We are committed to providing you with the best possible user experience, and we will work diligently to ensure 
+                    that you have access to all the resources you need.<br>Once again, thank you for registering with us.<br>We look forward 
+                    to serving you and providing you with a seamless user experience.</p>
+                    <br>Best regards,
+                    <br>$email_sender_name <br>
+                    $site_name
+                    ";
+                    $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
+                    
+                    $sent = Email::sendEmail($mailData);
+                    if ($sent) {
+                        return redirect()->back()->with('success', 'Email sent to your registered email id. please check your email and follow the instructions.');
+                    }
+                } else
                     return back()->withErrors([
                         'email' => 'user already exists.',
                     ])->onlyInput('email');
@@ -209,6 +231,8 @@ class SiteController extends Controller
             $sent = Email::sendEmail($mailData);
             if ($sent) {
                 return redirect()->back()->with('success', 'You have successfully subscribed to our updates email. Please check your email regularly and stay updated.');
+            }else{
+                return redirect()->back()->with('error', 'There is some issue with email. plz check your email id and try again.');
             }
         } else {
             return redirect()->back()->with('error', 'Please enter valid email');

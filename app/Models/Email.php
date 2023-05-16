@@ -19,10 +19,10 @@ class Email extends Model
             //Server settings
             $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'mail.shiwkesh.online';                     //Set the SMTP server to send through
+            $mail->Host       = env('EMAIL_HOST')?? null;                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'project@shiwkesh.online';                     //SMTP username
-            $mail->Password   = 'project@avish123';                               //SMTP password
+            $mail->Username   = env('EMAIL_USERNAME')?? null;                     //SMTP username
+            $mail->Password   = env('EMAIL_PASSWORD') ?? null;                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 

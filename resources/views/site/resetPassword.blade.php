@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forget page</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('css-1/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css-1/fontawesome-all.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css-1/iofrm-style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css-1/iofrm-theme4.css')}}">
+    <title>{{env('SITE_NAME')}}</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/iofrm-theme4.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 @php
@@ -21,7 +21,7 @@ $error = Session::get('error');
         <div class="website-logo">
             <a href="/">
                 <div class="logo">
-                    <img class="logo-size" src="{{asset('images/logo2')}}" alt="">
+                    <img class="logo-size" src="{{asset('public/images/logo2')}}" alt="">
                 </div>
             </a>
         </div>
@@ -29,7 +29,7 @@ $error = Session::get('error');
             <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder">
-                    <img src="{{asset('images/graphic1.svg')}}" alt="">
+                    <img src="{{asset('public/images/graphic1.svg')}}" alt="">
                 </div>
             </div>
             <div class="form-holder">
@@ -62,17 +62,17 @@ $error = Session::get('error');
         </div>
     </div>
     <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js-1"></script>
-    <script src="{{asset('js-1/jquery.min.js-1')}}"></script>
-    <script src="{{asset('js-1/popper.min.js')}}"></script>
-    <script src="{{asset('js-1/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js-1/main.js')}}"></script>
+    <script src="{{asset('public/js-1/jquery.min.js-1')}}"></script>
+    <script src="{{asset('public/js-1/popper.min.js')}}"></script>
+    <script src="{{asset('public/js-1/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/js-1/main.js')}}"></script>
 </body>
 <script>
     var success = "{{!empty($success)?$success:'NA'}}";
     var error = "{{!empty($error)?$error:'NA'}}";
     if (success != 'NA') {
         Swal.fire({
-            title: 'Reset Link Sent!',
+            title: 'Password updated successfully',
             text: success,
             icon: 'success',
             confirmButtonText: 'Okay',
@@ -87,7 +87,7 @@ $error = Session::get('error');
     }
     if (error != 'NA') {
         Swal.fire({
-            title: 'Reset Link Sent!',
+            title: 'Password Update Failed!',
             text: error,
             icon: 'error',
             confirmButtonText: 'Okay',

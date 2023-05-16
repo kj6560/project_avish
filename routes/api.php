@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\EventsController;
 use App\Http\Controllers\Api\PassportAuthController;
 use App\Http\Controllers\Api\SportsController;
+use App\Http\Controllers\Api\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
