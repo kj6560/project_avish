@@ -126,7 +126,7 @@ $error = Session::get('error');
     console.log(success);
     if (success != 'NA') {
         Swal.fire({
-            title: 'Emailer Subscribed',
+            title: 'Registered Successfully',
             text: success,
             icon: 'success',
             confirmButtonText: 'Okay',
