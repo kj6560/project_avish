@@ -32,41 +32,41 @@
 
     <!-- Bootstrap -->
 
-    <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
 
 
     <!-- FontAwesome -->
 
-    <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 
     <!-- Animation -->
 
-    <link rel="stylesheet" href="{{asset('public/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
 
     <!-- magnific -->
 
-    <link rel="stylesheet" href="{{asset('public/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 
     <!-- carousel -->
 
-    <link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
 
     <!-- isotop -->
 
-    <link rel="stylesheet" href="{{asset('public/css/isotop.css')}}">
+    <link rel="stylesheet" href="{{asset('css/isotop.css')}}">
 
     <!-- ico fonts -->
 
-    <link rel="stylesheet" href="{{asset('public/css/xsIcon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/xsIcon.css')}}">
 
     <!-- Template styles-->
 
-    <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
     <!-- Responsive styles-->
 
-    <link rel="stylesheet" href="{{asset('public/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -111,7 +111,7 @@ $error = Session::get('error');
 
                     <a class="navbar-brand" href="/">
 
-                        <img src="{{asset('public/images/logos/Univ-Logo-black.png')}}" width="100" height="100">
+                        <img src="{{asset('images/logos/Univ-Logo-black.png')}}" width="100" height="100">
 
                     </a>
 
@@ -165,7 +165,7 @@ $error = Session::get('error');
 
         <section class="main-slider owl-carousel">
 
-            <div class="banner-item overlay" style="background-image:url(public/images/hero_area/banner3.jpg)">
+            <div class="banner-item overlay" style="background-image:url(images/hero_area/banner3.jpg)">
 
                 <div class="container">
 
@@ -175,7 +175,7 @@ $error = Session::get('error');
 
                             <div class="banner-content-wrap text-center">
 
-                                <img class="title-shap-img" src="{{asset('public/images/shap/title-white.png')}}" alt="">
+                                <img class="title-shap-img" src="{{asset('images/shap/title-white.png')}}" alt="">
 
                                 <p class="banner-desc" style="color:Green;">BIHAR STATE SPORTS AUTHORITY</p>
 
@@ -215,7 +215,7 @@ $error = Session::get('error');
 
             </div><!-- banner item end-->
 
-            <!-- <div class="banner-item overlay" style="background-image:url(public/images/hero_area/banner4.jpg)">
+            <!-- <div class="banner-item overlay" style="background-image:url(images/hero_area/banner4.jpg)">
 
             <div class="container">
 
@@ -269,7 +269,7 @@ $error = Session::get('error');
 
     </div><!-- banner item end-->
 
-    <!-- <div class="banner-item overlay" style="background-image:url(public/images/hero_area/banner5.jpg)">
+    <!-- <div class="banner-item overlay" style="background-image:url(images/hero_area/banner5.jpg)">
 
             <div class="container">
 
@@ -398,7 +398,7 @@ $error = Session::get('error');
 
                 <div class="col-lg-6 no-padding">
 
-                    <div class="exp-img" style="background-image:url(public/images/cta_img.png); height: 624px;">
+                    <div class="exp-img" style="background-image:url(images/cta_img.png); height: 624px;">
 
                     </div>
 
@@ -458,7 +458,7 @@ $error = Session::get('error');
 
         <!-- ts-book-seat start-->
 
-        <section class="ts-book-seat" style="background-image: url(public/images/book_seat_img.jpg)">
+        <section class="ts-book-seat" style="background-image: url(images/book_seat_img.jpg)">
 
             <div class="container">
 
@@ -488,7 +488,7 @@ $error = Session::get('error');
 
                 <div class="ts-footer-newsletter">
 
-                    <div class="ts-newsletter" style="background-image: url(public/images/shap/subscribe_pattern.png)">
+                    <div class="ts-newsletter" style="background-image: url(images/shap/subscribe_pattern.png)">
 
                         <div class="row">
 
@@ -652,45 +652,45 @@ $error = Session::get('error');
 
     <!-- initialize jQuery Library -->
 
-    <script src="{{asset('public/js/jquery.js')}}"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
 
 
 
-    <script src="{{asset('public/js/popper.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
 
     <!-- Bootstrap jQuery -->
 
-    <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <!-- Counter -->
 
-    <script src="{{asset('public/js/jquery.appear.min.js')}}"></script>
+    <script src="{{asset('js/jquery.appear.min.js')}}"></script>
 
     <!-- Countdown -->
 
-    <script src="{{asset('public/js/jquery.jCounter.js')}}"></script>
+    <script src="{{asset('js/jquery.jCounter.js')}}"></script>
 
     <!-- magnific-popup -->
 
-    <script src="{{asset('public/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 
     <!-- carousel -->
 
-    <script src="{{asset('public/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
 
     <!-- Waypoints -->
 
-    <script src="{{asset('public/js/wow.min.js')}}"></script>
+    <script src="{{asset('js/wow.min.js')}}"></script>
 
     <!-- isotop -->
 
-    <script src="{{asset('public/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
 
 
 
     <!-- Template custom -->
 
-    <script src="{{asset('public/js/main.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 
 
 
