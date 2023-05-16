@@ -15,24 +15,24 @@
     <!-- CSS
          ================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
 
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
     <!-- Animation -->
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/animate.css')}}">
     <!-- magnific -->
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/magnific-popup.css')}}">
     <!-- carousel -->
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
     <!-- isotop -->
-    <link rel="stylesheet" href="{{asset('css/isotop.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/isotop.css')}}">
     <!-- ico fonts -->
-    <link rel="stylesheet" href="{{asset('css/xsIcon.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/xsIcon.css')}}">
     <!-- Template styles-->
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
     <!-- Responsive styles-->
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/responsive.css')}}">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,7 +53,7 @@
                 <nav class="navbar navbar-expand-lg ">
                     <!-- logo-->
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{asset('images/logos/Univ-Logo-black.png')}}" width="100" height="100">
+                        <img src="{{asset('public/images/logos/Univ-Logo-black.png')}}" width="100" height="100">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span>
@@ -85,7 +85,7 @@
                     <div class="row">
                         <div class="col-lg-11 mx-auto">
                             <div class="banner-content-wrap text-center">
-                                <img class="title-shap-img" src="{{asset('images/shap/title-white.png')}}" alt="">
+                                <img class="title-shap-img" src="{{asset('public/images/shap/title-white.png')}}" alt="">
                                 <p class="banner-desc" style="color:Green;">BIHAR STATE SPORTS AUTHORITY</p>
                                 <h1 class="banner-title">Sports conclave-2.0</h1>
 
@@ -324,26 +324,26 @@
     <!-- Javascript Files
             ================================================== -->
     <!-- initialize jQuery Library -->
-    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('public/js/jquery.js')}}"></script>
 
-    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('public/js/popper.min.js')}}"></script>
     <!-- Bootstrap jQuery -->
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
     <!-- Counter -->
-    <script src="{{asset('js/jquery.appear.min.js')}}"></script>
+    <script src="{{asset('public/js/jquery.appear.min.js')}}"></script>
     <!-- Countdown -->
-    <script src="{{asset('js/jquery.jCounter.js')}}"></script>
+    <script src="{{asset('public/js/jquery.jCounter.js')}}"></script>
     <!-- magnific-popup -->
-    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('public/js/jquery.magnific-popup.min.js')}}"></script>
     <!-- carousel -->
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('public/js/owl.carousel.min.js')}}"></script>
     <!-- Waypoints -->
-    <script src="{{asset('js/wow.min.js')}}"></script>
+    <script src="{{asset('public/js/wow.min.js')}}"></script>
     <!-- isotop -->
-    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('public/js/isotope.pkgd.min.js')}}"></script>
 
     <!-- Template custom -->
-    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('public/js/main.js')}}"></script>
 
     </div>
     <!-- Body inner end -->
