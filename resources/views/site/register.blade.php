@@ -12,13 +12,13 @@
 
     <title>{{env('SITE_NAME')}}</title>
 
-    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css-1/bootstrap.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css-1/fontawesome-all.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css-1/iofrm-style.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('public/css-1/iofrm-theme4.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css-1/iofrm-theme4.css')}}">
 
 </head>
 
@@ -34,7 +34,7 @@
 
                 <div class="logo">
 
-                    <img class="logo-size" src="{{asset('public/')}}images/logo2" alt="">
+                    <img class="logo-size" src="{{asset('/')}}images/logo2" alt="">
 
                 </div>
 
@@ -50,7 +50,7 @@
 
                 <div class="info-holder">
 
-                    <img src="{{asset('public/images/graphic1.svg')}}" alt="">
+                    <img src="{{asset('/images/graphic1.svg')}}" alt="">
 
                 </div>
 
@@ -106,13 +106,13 @@
 
     </div>
 
-    <script src="{{asset('public/js-1/jquery.min.js')}}"></script>
+    <script src="{{asset('/js-1/jquery.min.js')}}"></script>
 
-    <script src="{{asset('public/js-1/popper.min.js')}}"></script>
+    <script src="{{asset('/js-1/popper.min.js')}}"></script>
 
-    <script src="{{asset('public/js-1/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/js-1/bootstrap.min.js')}}"></script>
 
-    <script src="{{asset('public/js-1/main.js')}}"></script>
+    <script src="{{asset('/js-1/main.js')}}"></script>
 
 </body>
 
