@@ -23,8 +23,8 @@ class Email extends Model
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = env('EMAIL_USERNAME')?? null;                     //SMTP username
             $mail->Password   = env('EMAIL_PASSWORD') ?? null;                               //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
             $mail->setFrom('project@shiwkesh.online', 'Mailer');
