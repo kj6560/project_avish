@@ -80,7 +80,7 @@
 
         <!-- banner start-->
         <section class="main-slider owl-carousel">
-            <div class="banner-item overlay" style="background-image:url(images/hero_area/banner3.jpg)">
+            <div class="banner-item overlay" style="background-image:url(public/images/hero_area/banner3.jpg)">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-11 mx-auto">
@@ -105,7 +105,7 @@
                 </div>
                 <!-- Container end -->
             </div><!-- banner item end-->
-            <!-- <div class="banner-item overlay" style="background-image:url(images/hero_area/banner4.jpg)">
+            <!-- <div class="banner-item overlay" style="background-image:url(public/images/hero_area/banner4.jpg)">
             <div class="container">
                <div class="row">
                   <div class="col-lg-10 mx-auto">
@@ -132,7 +132,7 @@
     </div>
     <!-- Container end -->
     </div><!-- banner item end-->
-    <!-- <div class="banner-item overlay" style="background-image:url(images/hero_area/banner5.jpg)">
+    <!-- <div class="banner-item overlay" style="background-image:url(public/images/hero_area/banner5.jpg)">
             <div class="container">
                <div class="row">
                   <div class="col-lg-10 mx-auto">
@@ -197,7 +197,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 no-padding">
-                    <div class="exp-img" style="background-image:url(images/cta_img.png); height: 624px;">
+                    <div class="exp-img" style="background-image:url(public/images/cta_img.png); height: 624px;">
                     </div>
                 </div><!-- col end-->
                 <div class="col-lg-6 no-padding align-self-center">
@@ -227,7 +227,7 @@
     <div class="footer-area">
 
         <!-- ts-book-seat start-->
-        <section class="ts-book-seat" style="background-image: url(images/book_seat_img.jpg)">
+        <section class="ts-book-seat" style="background-image: url(public/images/book_seat_img.jpg)">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -242,7 +242,7 @@
 
                 </div><!-- row end-->
                 <div class="ts-footer-newsletter">
-                    <div class="ts-newsletter" style="background-image: url(images/shap/subscribe_pattern.png)">
+                    <div class="ts-newsletter" style="background-image: url(public/images/shap/subscribe_pattern.png)">
                         <div class="row">
                             <div class="col-lg-6 mx-auto">
                                 <div class="ts-newsletter-content">
