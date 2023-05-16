@@ -365,6 +365,13 @@ $error = Session::get('error');
 
                 </div><!-- col end-->
 
+                @guest
+                <div class="col-lg-6">
+                    <div class="intro-content-img">
+                        <a href="/login"><img src="{{asset('images/img.jpg')}}" alt=""></a>
+                    </div>
+                </div>
+                @else
                 <div class="col-lg-6">
 
                     <div class="intro-content-img">
@@ -373,7 +380,7 @@ $error = Session::get('error');
                     </div>
 
                 </div><!-- col end-->
-
+                @endguest
             </div><!-- row end-->
 
         </div><!-- container end-->
