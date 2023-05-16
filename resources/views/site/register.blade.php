@@ -122,6 +122,7 @@ $error = Session::get('error');
 <script>
     var success = "{{!empty($success)?$success:'NA'}}";
     var error = "{{!empty($error)?$error:'NA'}}";
+    console.log(success);
     if (success != 'NA') {
         Swal.fire({
             title: 'Emailer Subscribed',
