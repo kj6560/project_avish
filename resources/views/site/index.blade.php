@@ -405,7 +405,7 @@ $error = Session::get('error');
 
                 <div class="col-lg-6 no-padding">
 
-                    <div class="exp-img" style="background-image:url(images/cta_img.png); height: 624px;">
+                    <div class="exp-img" style="background-image:url(images/cta_img.jpg); height: 624px;">
 
                     </div>
 
