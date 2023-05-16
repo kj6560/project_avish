@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/css-1/iofrm-style.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{asset('/css-1/iofrm-theme4.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 @php
