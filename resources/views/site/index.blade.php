@@ -376,7 +376,7 @@ $error = Session::get('error');
 
                     <div class="intro-content-img">
 
-                        <iframe width="550" height="300" src="https://www.youtube.com/embed/ThiCMd5kGbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="550" height="300" src="{{env('EVENT_LINK')}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
 
                 </div><!-- col end-->
