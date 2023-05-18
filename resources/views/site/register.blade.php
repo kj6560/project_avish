@@ -88,7 +88,7 @@ $error = Session::get('error');
 
                             <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
 
-                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            
 
                             <div class="form-button">
 

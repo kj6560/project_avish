@@ -57,26 +57,27 @@ class SiteController extends Controller
                 'first_name' => ['required', 'string'],
                 'last_name' => ['required', 'string'],
                 'number' => ['required', 'string'],
-                'email' => ['required', 'email'],
-                'password' => ['required'],
+                'email' => ['required', 'email']
             ]);
 
             if ($credentials) {
                 $user = User::where("email", $data['email'])->first();
                 if (empty($user))
+                    $password = Hash::make(SiteController::getName(8));
                     $user = User::create([
                         'first_name' => $data['first_name'],
                         'last_name' => $data['last_name'],
                         'number' => $data['number'],
                         'email' => $data['email'],
                         'email_verified_at' => now(),
-                        'password' => Hash::make($data['password'])
+                        'password' => $password
                     ]);
                 if ($user) {
                     $user_name = $user->first_name . " " . $user->last_name;
                     $site_name = env("SITE_NAME", "UNIV SPORTA");
                     $subject = "Welcome to $site_name";
                     $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
+                    $email = $data['email'];
                     $message = "
                     <p>Dear $user_name,</p><br>
                     <p>Thank you for registering with us! We are thrilled to welcome you to our community and appreciate your interest
@@ -84,6 +85,10 @@ class SiteController extends Controller
                     <br>We are committed to providing you with the best possible user experience, and we will work diligently to ensure 
                     that you have access to all the resources you need.<br>Once again, thank you for registering with us.<br>We look forward 
                     to serving you and providing you with a seamless user experience.</p>
+                    <p>Your Login Credentials are:<br>
+                    email: $email<br>
+                    password: $password<br>
+                    </p>
                     <br>Best regards,
                     <br>$email_sender_name <br>
                     $site_name
@@ -104,6 +109,17 @@ class SiteController extends Controller
         } else {
             echo "not post";
         }
+    }
+    public static function getName($n) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+     
+        for ($i = 0; $i < $n; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $randomString .= $characters[$index];
+        }
+     
+        return $randomString;
     }
     public function logout(Request $request)
     {
