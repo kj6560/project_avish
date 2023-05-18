@@ -51,7 +51,7 @@ class SiteController extends Controller
     public function createUser(Request $request)
     {
         $data = $request->all();
-        if (!empty($data) && $data['email'] && $data['password']) {
+        if (!empty($data) && $data['email']) {
 
             $credentials = $request->validate([
                 'first_name' => ['required', 'string'],
