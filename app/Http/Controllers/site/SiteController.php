@@ -14,6 +14,8 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
+
+        header('X-Frame-Options', 'ALLOW-FROM https://youtube.com');
         return view('site.index');
     }
     public function login(Request $request)
@@ -87,7 +89,7 @@ class SiteController extends Controller
                     $site_name
                     ";
                     $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
-                    
+
                     $sent = Email::sendEmail($mailData);
                     if ($sent) {
                         return redirect()->back()->with('success', 'You have been successfully registered. Please login to continue.');
@@ -231,7 +233,7 @@ class SiteController extends Controller
             $sent = Email::sendEmail($mailData);
             if ($sent) {
                 return redirect()->back()->with('success', 'You have successfully subscribed to our updates email. Please check your email regularly and stay updated.');
-            }else{
+            } else {
                 return redirect()->back()->with('error', 'There is some issue with email. plz check your email id and try again.');
             }
         } else {
