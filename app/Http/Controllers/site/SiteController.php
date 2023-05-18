@@ -63,7 +63,8 @@ class SiteController extends Controller
             if ($credentials) {
                 $user = User::where("email", $data['email'])->first();
                 if (empty($user))
-                    $password = Hash::make(SiteController::getName(8));
+                    $pass_plain = SiteController::getName(8);
+                    $password = Hash::make($pass_plain);
                     $user = User::create([
                         'first_name' => $data['first_name'],
                         'last_name' => $data['last_name'],
@@ -87,7 +88,7 @@ class SiteController extends Controller
                     to serving you and providing you with a seamless user experience.</p>
                     <p>Your Login Credentials are:<br>
                     email: $email<br>
-                    password: $password<br>
+                    password: $pass_plain<br>
                     </p>
                     <br>Best regards,
                     <br>$email_sender_name <br>
