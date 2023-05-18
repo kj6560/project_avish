@@ -97,7 +97,7 @@ class SiteController extends Controller
 
                     $sent = Email::sendEmail($mailData);
                     if ($sent) {
-                        return redirect()->back()->with('success', 'You have been successfully registered. Please login to continue.');
+                        return redirect()->back()->with('success', 'You have been successfully registered and your password is sent on your registered email id. Please login with the password in the email id.In case you have not recieved email in the inbox, please check your spam or junk folder ');
                     }
                 } else
                     return back()->withErrors([
