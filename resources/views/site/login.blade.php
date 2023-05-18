@@ -62,9 +62,9 @@
 
                     <div class="form-items">
 
-                        <h3>Get more things done with Loggin platform.</h3>
+                        <h3>Univ Sporta Tech.</h3>
 
-                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                        <p>Please login to continue.</p>
 
                         <div class="page-links">
 
