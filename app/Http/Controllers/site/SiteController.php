@@ -14,8 +14,6 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-
-        header('X-Frame-Options', 'ALLOW-FROM https://youtube.com');
         return view('site.index');
     }
     public function login(Request $request)
@@ -26,7 +24,6 @@ class SiteController extends Controller
     public function loginAuthentication(Request $request)
     {
         $data = $request->all();
-
         if (!empty($data) && $data['email'] && $data['password']) {
             $attemptData = array("email" => $data['email'], "password" => $data['password']);
             if (Auth::attempt($attemptData)) {
