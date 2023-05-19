@@ -31,7 +31,7 @@ class SiteController extends Controller
             $attemptData = array("email" => $data['email'], "password" => $data['password']);
             if (Auth::attempt($attemptData)) {
                 $request->session()->regenerate();
-                return redirect()->route('home');
+                return redirect('/');
             } else {
                 return back()->withErrors([
                     'errors' => 'user authentication failed.',
