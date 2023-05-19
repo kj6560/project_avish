@@ -61,7 +61,7 @@ class SiteController extends Controller
                 $user = User::where("email", $data['email'])->first();
                 if (empty($user))
                     $pass_plain = SiteController::getName(8);
-                    $password = Hash::make($pass_plain);
+                    $password = bcrypt($pass_plain);
                     $user = User::create([
                         'first_name' => $data['first_name'],
                         'last_name' => $data['last_name'],
