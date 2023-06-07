@@ -34,7 +34,7 @@ class PassportAuthController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
-
+        print_r($data);
         if (auth()->attempt($data)) {
             $token = auth()->user()->createToken('LaravelAuthApp')->accessToken;
             return response()->json(['token' => $token], 200);
