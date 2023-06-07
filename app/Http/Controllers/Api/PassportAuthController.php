@@ -18,12 +18,13 @@ class PassportAuthController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        $user = User::create([
+        $user = new User([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
+        $user->save();
         die("hello");
         if(!empty($user)){
             $user->createToken('LaravelAuthApp')->accessToken;
