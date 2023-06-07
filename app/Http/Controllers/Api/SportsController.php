@@ -14,7 +14,7 @@ class SportsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         echo "reached here";die;
         $sports = Sports::all();
