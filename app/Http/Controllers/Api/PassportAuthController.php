@@ -27,7 +27,7 @@ class PassportAuthController extends Controller
                 return response()->json(['error' => true,'user not created'], 401);
             }
         }else{
-            return response()->json(['error' => true,'user already exist'], 402);
+            return response()->json(['error' => true,'user already exist by this email'], 402);
         }
         
     }
