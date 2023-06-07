@@ -15,6 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         $token = $request->all()['token'];
-        print_r($token);die;
+        if (!$token) {
+            return route('login');
+        }
     }
 }
