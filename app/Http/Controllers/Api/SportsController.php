@@ -16,6 +16,7 @@ class SportsController extends Controller
      */
     public function index()
     {
+        echo "reached here";die;
         $sports = Sports::all();
         $events = Event::all();
         $user = auth()->user();
