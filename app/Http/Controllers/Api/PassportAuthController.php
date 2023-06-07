@@ -11,20 +11,25 @@ class PassportAuthController extends Controller
 {
     public function register(Request $request)
     {
-        
-        $user = new User([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-        $user->save();
-        if(!empty($user)){
-            $user->createToken('LaravelAuthApp')->accessToken;
-            return response()->json(['success' => true,'user'=>$user], 200);
+        $is_exist = User::where('email', $request->email)->first();
+        if(!empty($is_exist)){
+            $user = new User([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password)
+            ]);
+            $user->save();
+            if(!empty($user)){
+                $user->createToken('LaravelAuthApp')->accessToken;
+                return response()->json(['success' => true,'user'=>$user], 200);
+            }else{
+                return response()->json(['error' => true,'user not created'], 401);
+            }
         }else{
-            return response()->json(['error' => true,'user not created'], 401);
+            return response()->json(['error' => true,'user already exist'], 402);
         }
+        
     }
     public function login(Request $request)
     {
