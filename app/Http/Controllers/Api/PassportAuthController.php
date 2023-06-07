@@ -23,7 +23,7 @@ class PassportAuthController extends Controller
             $user->createToken('LaravelAuthApp')->accessToken;
             return response()->json(['success' => true,'user'=>$user], 200);
         }else{
-            return response()->json(['error' => true,'user not created'], 200);
+            return response()->json(['error' => true,'user not created'], 401);
         }
     }
     public function login(Request $request)
