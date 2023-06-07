@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PassportAuthController extends Controller
 {
@@ -34,8 +35,8 @@ class PassportAuthController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
-
-        if (auth('api')->attempt($data)) {
+        $user = User::where('email', $data['email'])->first();
+        if (Hash::check($request->password, $user->password)) {
             $token = auth()->user()->createToken('LaravelAuthApp')->accessToken;
             return response()->json(['token' => $token], 200);
         } else {
