@@ -14,6 +14,6 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        echo $request['token'];
+        echo "reached here";die;
     }
 }
