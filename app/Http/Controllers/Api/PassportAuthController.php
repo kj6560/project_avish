@@ -37,7 +37,7 @@ class PassportAuthController extends Controller
         ];
         $user = User::where('email', $data['email'])->first();
         if (Hash::check($request->password, $user->password)) {
-            $token = auth()->user()->createToken('LaravelAuthApp')->accessToken;
+            $token = $user->createToken('LaravelAuthApp')->accessToken;
             return response()->json(['token' => $token], 200);
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
