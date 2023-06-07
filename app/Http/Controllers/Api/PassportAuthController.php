@@ -11,13 +11,7 @@ class PassportAuthController extends Controller
 {
     public function register(Request $request)
     {
-        $this->validate($request, [
-            'first_name' => 'required|min:4',
-            'last_name' => 'required|min:4',
-            'email' => 'required|email',
-            'password' => 'required|min:8',
-        ]);
-
+        
         $user = new User([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
