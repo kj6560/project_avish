@@ -14,6 +14,6 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        echo "reached here";die;
+        print_r($request->all());die;
     }
 }
