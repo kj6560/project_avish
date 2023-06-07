@@ -11,7 +11,6 @@ class PassportAuthController extends Controller
 {
     public function register(Request $request)
     {
-        die("hello");
         $this->validate($request, [
             'first_name' => 'required|min:4',
             'last_name' => 'required|min:4',
@@ -25,6 +24,7 @@ class PassportAuthController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
+        die("hello");
         if(!empty($user)){
             $user->createToken('LaravelAuthApp')->accessToken;
             return response()->json(['success' => true,'user'=>$user], 200);
