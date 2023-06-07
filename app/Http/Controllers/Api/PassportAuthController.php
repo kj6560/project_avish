@@ -12,7 +12,7 @@ class PassportAuthController extends Controller
     public function register(Request $request)
     {
         $is_exist = User::where('email', $request->email)->first();
-        if(!empty($is_exist)){
+        if(empty($is_exist)){
             $user = new User([
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
