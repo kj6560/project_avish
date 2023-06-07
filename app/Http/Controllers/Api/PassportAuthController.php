@@ -25,9 +25,9 @@ class PassportAuthController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        $token = $user->createToken('LaravelAuthApp')->accessToken;
+       $user->createToken('LaravelAuthApp')->accessToken;
 
-        return response()->json(['token' => $token], 200);
+        return response()->json(['success' => true,'user'=>$user], 200);
     }
     public function login(Request $request)
     {
