@@ -24,10 +24,12 @@ class PassportAuthController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
-        print_r($user);
-       $user->createToken('LaravelAuthApp')->accessToken;
-
-        return response()->json(['success' => true,'user'=>$user], 200);
+        if(!empty($user)){
+            $user->createToken('LaravelAuthApp')->accessToken;
+            return response()->json(['success' => true,'user'=>$user], 200);
+        }else{
+            return response()->json(['error' => true,'user not created'], 200);
+        }
     }
     public function login(Request $request)
     {
