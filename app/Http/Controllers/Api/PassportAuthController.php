@@ -37,6 +37,7 @@ class PassportAuthController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
+        print_r($data);
         $user = User::where('email', $data['email'])->first();
         print_r($user);
         if(!empty($user)){
