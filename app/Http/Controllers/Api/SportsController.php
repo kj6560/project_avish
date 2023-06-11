@@ -19,7 +19,7 @@ class SportsController extends Controller
         $sports = Sports::all();
         $events = Event::all();
         $user = auth()->user();
-        return response()->json(["sports" => $sports, "events" => $events, "user" => $user]);
+        return response()->json($sports);
     }
 
     /**
