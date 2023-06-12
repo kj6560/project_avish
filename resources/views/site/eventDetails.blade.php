@@ -55,22 +55,22 @@
                             <ul class="info-list list-unstyled">
                                 <li>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{$user ? $user->first_name?''}}" required>
+                                        <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{$user ? $user->first_name:''}}" required>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{$user ? $user->first_name?''}}" required>
+                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{$user ? $user->first_name:''}}" required>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Id" value="{{$user ? $user->first_name?''}}" required>
+                                        <input type="text" class="form-control" name="email" placeholder="Email Id" value="{{$user ? $user->first_name:''}}" required>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="number" placeholder="Phone Number" value="{{$user ? $user->number?''}}" required>
+                                        <input type="text" class="form-control" name="number" placeholder="Phone Number" value="{{$user ? $user->number:''}}" required>
                                     </div>
                                 </li>
 
