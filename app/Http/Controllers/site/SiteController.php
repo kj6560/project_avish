@@ -262,4 +262,12 @@ class SiteController extends Controller
     public function event(Request $request){
         return view('site.event');
     }
+
+    public function gallery(Request $request){
+        return view('site.contactus');
+    }
+
+    public function contactus(Request $request){
+        return view('site.contactus');
+    }
 }

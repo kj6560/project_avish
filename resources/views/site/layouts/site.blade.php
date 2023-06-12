@@ -150,12 +150,12 @@
                         <nav class="navbar navbar-expand-lg">
                             <div class="navbar-collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="index-3.html">Home</a></li>
+                                    <li class="active"><a href="/">Home</a></li>
                                     <li><a href="/about">About Us</a></li>
                                     <li class=""><a href="/event">Event</a></li>
-                                    <li class=""><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
-                                    <li><a href="#">Login</a></li>
+                                    <li class=""><a href="/gallery">Gallery</a></li>
+                                    <li><a href="/contactus">Contact Us</a></li>
+                                    <li><a href="/login">Login</a></li>
                                 </ul>
                             </div>
                         </nav>
