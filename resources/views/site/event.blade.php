@@ -39,7 +39,8 @@
                         <ul class="details list-unstyled">
                             <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
                                 echo date('D', strtotime($date)); @endphp</li>
-                            <li><i class="fa fa-clock-o"></i>10:00 - 11:00</li>
+                            <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
+                                echo date('H:i', strtotime($date)); @endphp</li>
                         </ul>
                         <div class="class-text">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
