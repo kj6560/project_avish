@@ -156,7 +156,7 @@
 use Illuminate\Http\Request;
 
  echo Request::url(); ?>
-                                    <li class="{{}}"><a href="/">Home</a></li>
+                                    <li class=""><a href="/">Home</a></li>
                                     <li class=""><a href="/about">About Us</a></li>
                                     <li class=""><a href="/event">Event</a></li>
                                     <li class=""><a href="/gallery">Gallery</a></li>
