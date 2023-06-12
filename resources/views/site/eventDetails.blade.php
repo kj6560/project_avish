@@ -1,9 +1,9 @@
 @extends('site.layouts.site')
 @section('content')
-@php 
+@php
 
-    $user = Auth::user();
-    $user = !empty($user) ? $user : null;
+$user = Auth::user();
+$user = !empty($user) ? $user : null;
 
 @endphp
 <section class="classes">
@@ -53,6 +53,11 @@
 
                             @csrf
                             <ul class="info-list list-unstyled">
+                                <li hidden>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="event_id"  value="{{$event->id}}">
+                                    </div>
+                                </li>
                                 <li>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{$user ? $user->first_name:''}}" required>
