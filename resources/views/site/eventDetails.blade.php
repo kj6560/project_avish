@@ -60,12 +60,12 @@
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{$user ? $user->first_name:''}}" required>
+                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{$user ? $user->last_name:''}}" required>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Id" value="{{$user ? $user->first_name:''}}" required>
+                                        <input type="text" class="form-control" name="email" placeholder="Email Id" value="{{$user ? $user->email:''}}" required>
                                     </div>
                                 </li>
                                 <li>
