@@ -17,9 +17,9 @@
                             </div>
                             <ul class="details list-unstyled">
                                 <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
-                                echo date('D', strtotime($date)); @endphp</li>
+                                    echo date('D', strtotime($date)); @endphp</li>
                                 <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
-                                echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
+                                    echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                             </ul>
                             <div class="class-text">
                                 <p>{{ $event->event_bio }}</p>
@@ -71,35 +71,20 @@
                     <a class="register main-btn" href="#"><span>Register Now</span></a>
                     <div class="sidebar-classes">
                         <h4>Other Events</h4>
+                        @foreach($events as $event_)
+                        @if($event_->id != $event->id)
                         <div class="class-inner">
                             <div class="class-image">
-                                <img class="img-fluid" src="images/classes/2.jpg" alt>
+                                <img class="img-fluid" src="{{asset('uploads/events/images/'.$event_->event_image)}}" alt>
                             </div>
                             <div class="class-info">
-                                <h5><a href="#">Balance Body &amp; Mind</a></h5>
-                                <p>By: Elina Ekman</p>
+                                <h5><a href="#">{{$event_->event_name}}</a></h5>
+                                <p>By: Administrator</p>
                             </div>
                         </div>
-                        <div class="class-inner">
-                            <div class="class-image">
-                                <img class="img-fluid" src="images/classes/3.jpg" alt>
-                            </div>
-                            <div class="class-info">
-                                <h5><a href="#">Yoga Classes for Children</a></h5>
-                                <p>By: Razan Smith</p>
-                            </div>
-                        </div>
-                        <div class="class-inner">
-                            <div class="class-image">
-                                <img class="img-fluid" src="images/classes/4.jpg" alt>
-                            </div>
-                            <div class="class-info">
-                                <h5><a href="#">Increased body awareness</a></h5>
-                                <p>By: Lily Garner</p>
-                            </div>
-                        </div>
+                        @enforeach
                     </div>
-                    <div class="sidebar-tags">
+                    <!-- <div class="sidebar-tags">
                         <h4>Tags</h4>
                         <ul class="tags-list list-unstyled">
                             <li>
@@ -118,7 +103,7 @@
 										<a href="#">yoga tutorials</a>
 									</li> -->
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -147,11 +132,11 @@
                                 <h4>{{$event->event_name}}</h4>
                             </a>
                         </div>
-                        
+
                         <div class="event-text">
                             <p>{{$event->event_bio}}.</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
