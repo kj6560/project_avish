@@ -43,10 +43,10 @@
                                 echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                         </ul>
                         <div class="class-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
+                            <p>{{$event->event_bio}}</p>
                         </div>
                         <ul class="class-info list-unstyled">
-                            <li class="pull-left">Jack Hakman</li>
+                            <li class="pull-left">Updated By Administrator</li>
                             <li class="pull-right"><a href="event-page.html" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
                         </ul>
                     </div>
