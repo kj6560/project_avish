@@ -55,7 +55,10 @@
 </head>
 
 <body>
-
+    @php
+    $success = Session::get('success');
+    $error = Session::get('error');
+    @endphp
     <!-- ========== Start Loading ========== -->
 
     <div class="loading">
@@ -255,5 +258,31 @@
     <!-- Custom Js -->
     <script src="{{asset('js/custom.js')}}"></script>
 </body>
+<script>
+    var success = "{{!empty($success)?$success:'NA'}}";
+    var error = "{{!empty($error)?$error:'NA'}}";
+    if (success != 'NA') {
+        Swal.fire({
+            title: 'Done',
+            text: success,
+            icon: 'success',
+            confirmButtonText: 'Okay',
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/';
+            }
+        })
+    }
+    if (error != 'NA') {
+        Swal.fire({
+            title: 'Failed!',
+            text: error,
+            icon: 'error',
+            confirmButtonText: 'Okay',
+
+        });
+    }
+</script>
 
 </html>

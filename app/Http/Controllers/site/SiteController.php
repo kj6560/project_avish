@@ -5,6 +5,7 @@ namespace App\Http\Controllers\site;
 use App\Http\Controllers\Controller;
 use App\Models\Email;
 use App\Models\Event;
+use App\Models\EventUsers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -279,5 +280,13 @@ class SiteController extends Controller
     public function registerNow(Request $request){
         $post = $request->all();
         print_r($post);
+        if(!empty($post)){
+            $event_user = EventUsers::create(['event_id'=>$post['event_id'],'user_id'=>$post['user_id']]);
+            if($event_user){
+                return redirect()->back()->with('success', 'You have successfully registered for this event.');
+            }else{
+                return redirect()->back()->with('error', 'Plz try again later.');
+            }
+        }
     }
 }
