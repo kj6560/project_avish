@@ -63,15 +63,15 @@ class SiteController extends Controller
                 $user = User::where("email", $data['email'])->first();
                 if (empty($user))
                     $pass_plain = SiteController::getName(8);
-                    $password = bcrypt($pass_plain);
-                    $user = User::create([
-                        'first_name' => $data['first_name'],
-                        'last_name' => $data['last_name'],
-                        'number' => $data['number'],
-                        'email' => $data['email'],
-                        'email_verified_at' => now(),
-                        'password' => $password
-                    ]);
+                $password = bcrypt($pass_plain);
+                $user = User::create([
+                    'first_name' => $data['first_name'],
+                    'last_name' => $data['last_name'],
+                    'number' => $data['number'],
+                    'email' => $data['email'],
+                    'email_verified_at' => now(),
+                    'password' => $password
+                ]);
                 if ($user) {
                     $user_name = $user->first_name . " " . $user->last_name;
                     $site_name = env("SITE_NAME", "UNIV SPORTA");
@@ -110,15 +110,16 @@ class SiteController extends Controller
             echo "not post";
         }
     }
-    public static function getName($n) {
+    public static function getName($n)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';
-     
+
         for ($i = 0; $i < $n; $i++) {
             $index = rand(0, strlen($characters) - 1);
             $randomString .= $characters[$index];
         }
-     
+
         return $randomString;
     }
     public function logout(Request $request)
@@ -257,35 +258,92 @@ class SiteController extends Controller
         }
     }
 
-    public function about(Request $request){
+    public function about(Request $request)
+    {
         return view('site.about');
     }
 
-    public function event(Request $request){
-        return view('site.event',['events'=>Event::all()]);
+    public function event(Request $request)
+    {
+        return view('site.event', ['events' => Event::all()]);
     }
 
-    public function eventDetails(Request $request,$id){
-        return view('site.eventDetails',['event'=>Event::where('id',Crypt::decryptString($id))->first(),'events'=>Event::all()]);
+    public function eventDetails(Request $request, $id)
+    {
+        return view('site.eventDetails', ['event' => Event::where('id', Crypt::decryptString($id))->first(), 'events' => Event::all()]);
     }
 
-    public function gallery(Request $request){
+    public function gallery(Request $request)
+    {
         return view('site.gallery');
     }
 
-    public function contactus(Request $request){
+    public function contactus(Request $request)
+    {
         return view('site.contactus');
     }
 
-    public function registerNow(Request $request){
+    public function registerNow(Request $request)
+    {
         $post = $request->all();
-        print_r($post);
-        if(!empty($post)){
-            $event_user = EventUsers::create(['event_id'=>$post['event_id'],'user_id'=>$post['user_id']]);
-            if($event_user){
-                return redirect()->back()->with('success', 'You have successfully registered for this event.');
-            }else{
-                return redirect()->back()->with('error', 'Plz try again later.');
+        if (!empty($post)) {
+            $user = User::where('email', $post['email'])->first();
+            if ($user) {
+                $event_user = EventUsers::create(['event_id' => $post['event_id'], 'user_id' => $user['id']]);
+                if ($event_user) {
+                    return redirect()->back()->with('success', 'You have successfully registered for this event.');
+                } else {
+                    return redirect()->back()->with('error', 'Plz try again later.');
+                }
+            } else {
+                $credentials = $request->validate([
+                    'first_name' => ['required', 'string'],
+                    'last_name' => ['required', 'string'],
+                    'number' => ['required', 'string'],
+                    'email' => ['required', 'email']
+                ]);
+
+                if ($credentials) {
+                    $user = User::where("email", $post['email'])->first();
+                    if (empty($user)) {
+                        $pass_plain = SiteController::getName(8);
+                        $password = bcrypt($pass_plain);
+                        $user = User::create([
+                            'first_name' => $post['first_name'],
+                            'last_name' => $post['last_name'],
+                            'number' => $post['number'],
+                            'email' => $post['email'],
+                            'email_verified_at' => now(),
+                            'password' => $password
+                        ]);
+                    }
+                    $user_name = $user->first_name . " " . $user->last_name;
+                    $site_name = env("SITE_NAME", "UNIV SPORTA");
+                    $subject = "Welcome to $site_name";
+                    $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
+                    $email = $post['email'];
+                    $message = "
+                        <p>Dear $user_name,</p><br>
+                        <p>Thank you for registering with us! We are thrilled to welcome you to our community and appreciate your interest
+                        in our Univ.<br>Your registration has been successfully processed, and you are now a valued member of our platform.
+                        <br>We are committed to providing you with the best possible user experience, and we will work diligently to ensure 
+                        that you have access to all the resources you need.<br>Once again, thank you for registering with us.<br>We look forward 
+                        to serving you and providing you with a seamless user experience.</p>
+                        <p>Your Login Credentials are:<br>
+                        email: $email<br>
+                        password: $pass_plain<br>
+                        </p>
+                        <br>Best regards,
+                        <br>$email_sender_name <br>
+                        $site_name
+                        ";
+                    $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
+
+                    $sent = Email::sendEmail($mailData);
+                    if ($sent) {
+                        return redirect()->back()->with('success', 'You have been successfully registered and your password is sent on your registered email id. Please login with the password in the email id.In case you have not recieved email in the inbox, please check your spam or junk folder ');
+                    }
+                }
             }
         }
     }
