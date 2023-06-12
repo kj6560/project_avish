@@ -37,8 +37,8 @@
                             </a>
                         </div>
                         <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>@php $date = '2014-02-25';
-                                date('D', strtotime($date)); @endphp</li>
+                            <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
+                                echo date('D', strtotime($date)); @endphp</li>
                             <li><i class="fa fa-clock-o"></i>10:00 - 11:00</li>
                         </ul>
                         <div class="class-text">
