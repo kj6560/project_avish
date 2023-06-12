@@ -15,3 +15,4 @@ Route::get('/forgotPassword', [SiteController::class, 'forgot'])->name('forgot')
 Route::get('/reset', [SiteController::class, 'resetPassword'])->name('resetPassword');
 Route::post('/forgotPasswordUser', [SiteController::class, 'forgotPasswordUser'])->name('forgotPasswordUser');
 Route::post('/resetPasswordUser', [SiteController::class, 'resetPasswordUser'])->name('resetPasswordUser');
+Route::get('/about', [SiteController::class, 'about'])->name('about');

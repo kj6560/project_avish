@@ -151,7 +151,7 @@
                             <div class="navbar-collapse">
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="index-3.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="/about">About Us</a></li>
                                     <li class=""><a href="event.html">Event</a></li>
                                     <li class=""><a href="gallery.html">Gallery</a></li>
                                     <li><a href="contact-us.html">Contact Us</a></li>
