@@ -7,7 +7,7 @@
                 <div class="class-details">
                     <div class="class">
                         <div class="class-img">
-                            <img src="{{asset('images/event-header.jpg')}}" class="img-fluid" alt="">
+                            <img src="images/event-header.jpg" class="img-fluid" alt="">
                         </div>
                         <div class="class-content">
                             <div class="class-title">
@@ -22,7 +22,7 @@
                                     echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                             </ul>
                             <div class="class-text">
-                                <p>{{ $event->event_bio }}</p>
+                                <p>{{$event->event_bio}}.</p>
                             </div>
                             <div class="class-footer">
                                 <div class="class-share">
@@ -41,51 +41,68 @@
             </div>
             <div class="col-lg-4">
                 <div class="class-sidebar">
+                    <form action="{{route('event.registerNow')}}" method="POST">
+                        <div class="sidebar-info">
+                            <h4>Register For This Event</h4>
 
-                    <div class="sidebar-info">
-                        <h4>Register For This Event</h4>
-                        <ul class="info-list list-unstyled">
-                            <li>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="first name" placeholder="First Name" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="last name" placeholder="Last Name" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="email" placeholder="Email Id" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="phone number" placeholder="Phone Number" required>
-                                </div>
-                            </li>
+                            @csrf
+                            <ul class="info-list list-unstyled">
+                                <li>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="first name" placeholder="First Name" required>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="last name" placeholder="Last Name" required>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="email" placeholder="Email Id" required>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="phone number" placeholder="Phone Number" required>
+                                    </div>
+                                </li>
 
-                        </ul>
-                    </div>
-                    <a class="register main-btn" href="#"><span>Register Now</span></a>
+                            </ul>
+                        </div>
+                        <a class="register main-btn" href="#"><span>Register Now</span></a>
+                    </form>
                     <div class="sidebar-classes">
                         <h4>Other Events</h4>
-                        @foreach($events as $event_data)
-                        @if($event_data->id != $event->id)
                         <div class="class-inner">
                             <div class="class-image">
-                                <img class="img-fluid" src="{{asset('uploads/events/images/'.$event_data->event_image)}}" alt>
+                                <img class="img-fluid" src="images/classes/2.jpg" alt>
                             </div>
                             <div class="class-info">
-                                <h5><a href="#">{{ $event_data->event_name }}</a></h5>
-                                <p>By: Administrator</p>
+                                <h5><a href="#">Balance Body &amp; Mind</a></h5>
+                                <p>By: Elina Ekman</p>
                             </div>
                         </div>
-                        @endif
-                        @enforeach
+                        <div class="class-inner">
+                            <div class="class-image">
+                                <img class="img-fluid" src="images/classes/3.jpg" alt>
+                            </div>
+                            <div class="class-info">
+                                <h5><a href="#">Yoga Classes for Children</a></h5>
+                                <p>By: Razan Smith</p>
+                            </div>
+                        </div>
+                        <div class="class-inner">
+                            <div class="class-image">
+                                <img class="img-fluid" src="images/classes/4.jpg" alt>
+                            </div>
+                            <div class="class-info">
+                                <h5><a href="#">Increased body awareness</a></h5>
+                                <p>By: Lily Garner</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <div class="sidebar-tags">
+                    <div class="sidebar-tags">
                         <h4>Tags</h4>
                         <ul class="tags-list list-unstyled">
                             <li>
@@ -97,20 +114,14 @@
                             <li>
                                 <a href="#">Event</a>
                             </li>
-                           <li>
-										<a href="#">fitness</a>
-									</li>
-									<li>
-										<a href="#">yoga tutorials</a>
-									</li> 
+
                         </ul>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 <section class="events" id="events">
     <div class="container">
@@ -127,24 +138,24 @@
             </div>
             <div class="col-lg-6">
                 <div class="event">
-                    <div class="event-content">
-                        <div class="event-title">
-                            <a href="event-details.html">
-                                <h4>{{ $event->event_name }}</h4>
-                            </a>
-                        </div>
-
-                        <div class="event-text">
-                            <p>{{ $event->event_bio }}.</p>
-                        </div>
-
+                </div> -->
+                <div class="event-content">
+                    <div class="event-title">
+                        <a href="event-details.html">
+                            <h4>Sports Conclave 2.0 aims</h4>
+                        </a>
+                    </div>
+                    </ul> -->
+                    <div class="event-text">
+                        <p>To provide a platform for key stakeholders to exchange ideas, share experiences, and discuss strategies for the growth of sports in Bihar. The event seeks to address various aspects such as infrastructure development, athlete training and support, policy reforms, and the overall promotion of sports at the grassroots level. By bringing together experts and enthusiasts, the conclave aims to chart a path towards transforming Bihar into a sporting powerhouse.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="my-btn text-center">
-            <a href="/event" target="_blank" class="main-btn"><span>All Events</span></a>
-        </div>
+    </div>
+    <div class="my-btn text-center">
+        <a href="event.html" target="_blank" class="main-btn"><span>All Events</span></a>
+    </div>
     </div>
 </section>
 @stop
