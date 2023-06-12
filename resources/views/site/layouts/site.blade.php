@@ -196,10 +196,10 @@
                         <div class="footer-item">
                             <h4>Quick Links</h4>
                             <ul class="list-unstyled">
-                                <li><a href="index-3.html">Home</a></li>
-                                <li><a href="about-us.html">About us</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="/home">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/gallery">Gallery</a></li>
+                                <li><a href="/contactus">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -207,9 +207,9 @@
                         <div class="footer-item">
                             <h4>Event Info</h4>
                             <ul class="list-unstyled">
-                                <li><a href="#">Login</a></li>
-                                <li><a href="event.html">Events</a></li>
-                                <li><a href="#">Register Now</a></li>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/event">Events</a></li>
+                                <li><a href="/registerNow">Register Now</a></li>
                             </ul>
                         </div>
                     </div>
