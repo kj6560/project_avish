@@ -7,21 +7,22 @@
                 <div class="class-details">
                     <div class="class">
                         <div class="class-img">
-                            <img src="images/event-header.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/event-header.jpg')}}" class="img-fluid" alt="">
                         </div>
                         <div class="class-content">
                             <div class="class-title">
                                 <a href="class-details.html">
-                                    <h4>Yoga For Beginners</h4>
+                                    <h4>{{$event->event_name}}</h4>
                                 </a>
                             </div>
                             <ul class="details list-unstyled">
-                                <li><i class="fa fa-calendar"></i>Mon, Tue</li>
-                                <li><i class="fa fa-clock-o"></i>10:00 - 11:00</li>
+                                <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
+                                echo date('D', strtotime($date)); @endphp</li>
+                                <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
+                                echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                             </ul>
                             <div class="class-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-                                <p>Excepteur sint ocacat cupidatat non proi dent sunt in culpa qui officia deserunt.mollit anim id est laborum. sed ut pers piciatis unde omnis iste natus error.sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
+                                <p>{{ $event->event_bio }}</p>
                             </div>
                             <div class="class-footer">
                                 <div class="class-share">
@@ -134,7 +135,7 @@
             <div class="col-lg-6">
                 <div class="event">
                     <div class="event-img">
-                        <img src="images/events/event-image.jpg" alt="">
+                        <img src="{{asset('uploads/events/images/'.$event->event_image)}}" alt="">
                     </div>
                 </div>
             </div>
@@ -143,12 +144,12 @@
                     <div class="event-content">
                         <div class="event-title">
                             <a href="event-details.html">
-                                <h4>Sports Conclave 2.0 aims</h4>
+                                <h4>{{$event->event_name}}</h4>
                             </a>
                         </div>
                         
                         <div class="event-text">
-                            <p>To provide a platform for key stakeholders to exchange ideas, share experiences, and discuss strategies for the growth of sports in Bihar. The event seeks to address various aspects such as infrastructure development, athlete training and support, policy reforms, and the overall promotion of sports at the grassroots level. By bringing together experts and enthusiasts, the conclave aims to chart a path towards transforming Bihar into a sporting powerhouse.</p>
+                            <p>{{$event->event_bio}}.</p>
                         </div>
                         
                     </div>
@@ -156,7 +157,7 @@
             </div>
         </div>
         <div class="my-btn text-center">
-            <a href="event.html" target="_blank" class="main-btn"><span>All Events</span></a>
+            <a href="/event" target="_blank" class="main-btn"><span>All Events</span></a>
         </div>
     </div>
 </section>
