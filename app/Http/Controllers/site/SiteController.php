@@ -4,6 +4,7 @@ namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Email;
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -260,7 +261,7 @@ class SiteController extends Controller
     }
 
     public function event(Request $request){
-        return view('site.event');
+        return view('site.event',['events'=>Event::all()]);
     }
 
     public function gallery(Request $request){

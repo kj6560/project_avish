@@ -23,11 +23,12 @@
             <h2>Events</h2>
         </div>
         <div class="row">
+            @foreach($events as $event)
             <!-- New Item -->
             <div class="col-lg-4 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <img src="images/classes/g3.jpg" class="img-fluid" alt="">
+                        <img src="{{asset('uploads/events/images/'.$event->image)}}" class="img-fluid" alt="">
                     </div>
                     <div class="class-content">
                         <div class="class-title">
@@ -49,136 +50,7 @@
                     </div>
                 </div>
             </div>
-            <!-- New Item -->
-            <div class="col-lg-4 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="class-content">
-                        <div class="class-title">
-                            <a href="event-page.html">
-                                <h4>Title Here</h4>
-                            </a>
-                        </div>
-                        <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>Mon, Tue, Thu</li>
-                            <li><i class="fa fa-clock-o"></i>9:00 - 10:00</li>
-                        </ul>
-                        <div class="class-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                        </div>
-                        <ul class="class-info list-unstyled">
-                            <li class="pull-left">Elina Ekman</li>
-                            <li class="pull-right"><a href="event-page.html" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-4 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="class-content">
-                        <div class="class-title">
-                            <a href="event-page.html">
-                                <h4>Title Here</h4>
-                            </a>
-                        </div>
-                        <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>Wed, Thu</li>
-                            <li><i class="fa fa-clock-o"></i>12:00 - 13:00</li>
-                        </ul>
-                        <div class="class-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                        </div>
-                        <ul class="class-info list-unstyled">
-                            <li class="pull-left">Razan Smith</li>
-                            <li class="pull-right"><a href="event-page.html" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-4 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="class-content">
-                        <div class="class-title">
-                            <a href="event-page.html">
-                                <h4>Title Here</h4>
-                            </a>
-                        </div>
-                        <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>Mon, Wed, Sun</li>
-                            <li><i class="fa fa-clock-o"></i>11:00 - 12:00</li>
-                        </ul>
-                        <div class="class-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                        </div>
-                        <ul class="class-info list-unstyled">
-                            <li class="pull-left">Lily Garner</li>
-                            <li class="pull-right"><a href="event-page.html" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-4 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="class-content">
-                        <div class="class-title">
-                            <a href="event-page.html">
-                                <h4>Title Here</h4>
-                            </a>
-                        </div>
-                        <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>Tue, Wed, Fri</li>
-                            <li><i class="fa fa-clock-o"></i>9:00 - 10:00</li>
-                        </ul>
-                        <div class="class-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                        </div>
-                        <ul class="class-info list-unstyled">
-                            <li class="pull-left">Jack Hakman</li>
-                            <li class="pull-right"><a href="event-page.html" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-4 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="class-content">
-                        <div class="class-title">
-                            <a href="event-page.html">
-                                <h4>Title Here</h4>
-                            </a>
-                        </div>
-                        <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>Fri, Sat</li>
-                            <li><i class="fa fa-clock-o"></i>10:00 - 11:00</li>
-                        </ul>
-                        <div class="class-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                        </div>
-                        <ul class="class-info list-unstyled">
-                            <li class="pull-left">Peter Doe</li>
-                            <li class="pull-right"><a href="event-page.html" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
