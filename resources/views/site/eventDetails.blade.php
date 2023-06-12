@@ -76,7 +76,7 @@
 
                             </ul>
                         </div>
-                        <a class="register main-btn" href="#"><span>Register Now</span></a>
+                        <button type="submit" class="register main-btn" href="#"><span>Register Now</span></button>
                     </form>
                     <div class="sidebar-classes">
                         <h4>Other Events</h4>
