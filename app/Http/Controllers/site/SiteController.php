@@ -265,7 +265,7 @@ class SiteController extends Controller
     }
 
     public function eventDetails(Request $request,$id){
-        return view('site.eventDetails',['events'=>Event::where('id',$id)->first()]);
+        return view('site.eventDetails',['events'=>Event::where('id',Crypt::decryptString($id))->first()]);
     }
 
     public function gallery(Request $request){
