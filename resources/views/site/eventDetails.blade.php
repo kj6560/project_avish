@@ -89,7 +89,7 @@
                         @endforeach
 
                     </div>
-                    <div class="sidebar-tags">
+                    <!-- <div class="sidebar-tags">
                         <h4>Tags</h4>
                         <ul class="tags-list list-unstyled">
                             <li>
@@ -103,7 +103,7 @@
                             </li>
 
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
