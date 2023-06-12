@@ -17,6 +17,7 @@ Route::post('/forgotPasswordUser', [SiteController::class, 'forgotPasswordUser']
 Route::post('/resetPasswordUser', [SiteController::class, 'resetPasswordUser'])->name('resetPasswordUser');
 Route::get('/about', [SiteController::class, 'about'])->name('about');
 Route::get('/event', [SiteController::class, 'event'])->name('event');
+Route::get('/eventDetails/{id}', [SiteController::class, 'eventDetails'])->name('eventDetails');
 Route::get('/gallery', [SiteController::class, 'gallery'])->name('gallery');
 Route::get('/contactus', [SiteController::class, 'contactus'])->name('contactus');
 Route::get('/registerNow', [SiteController::class, 'registerNow'])->name('registerNow');
