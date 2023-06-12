@@ -47,7 +47,7 @@
             </div>
             <div class="col-lg-4 registerNow">
                 <div class="class-sidebar">
-                    <form action="{{route('registerNow')}}" method="POST">
+                    <form action="/registerNow" method="POST">
                         <div class="sidebar-info">
                             <h4>Register For This Event</h4>
 
