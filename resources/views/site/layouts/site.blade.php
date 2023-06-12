@@ -151,17 +151,12 @@
                         <nav class="navbar navbar-expand-lg">
                             <div class="navbar-collapse">
                                 <ul class="nav navbar-nav">
-                                    <?php
-
-use Illuminate\Http\Request;
-
- echo Request::url(); ?>
-                                    <li class=""><a href="/">Home</a></li>
-                                    <li class=""><a href="/about">About Us</a></li>
-                                    <li class=""><a href="/event">Event</a></li>
-                                    <li class=""><a href="/gallery">Gallery</a></li>
-                                    <li class=""><a href="/contactus">Contact Us</a></li>
-                                    <li class=""><a href="/login">Login</a></li>
+                                    <li class="{{ Request::is('home') ? 'active' : '' }}"><a href="/">Home</a></li>
+                                    <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="/about">About Us</a></li>
+                                    <li class="{{ Request::is('event') ? 'active' : '' }}"><a href="/event">Event</a></li>
+                                    <li class="{{ Request::is('gallery') ? 'active' : '' }}"><a href="/gallery">Gallery</a></li>
+                                    <li class="{{ Request::is('contactus') ? 'active' : '' }}"><a href="/contactus">Contact Us</a></li>
+                                    <li><a href="/login">Login</a></li>
                                 </ul>
                             </div>
                         </nav>
