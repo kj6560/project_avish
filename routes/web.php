@@ -16,3 +16,4 @@ Route::get('/reset', [SiteController::class, 'resetPassword'])->name('resetPassw
 Route::post('/forgotPasswordUser', [SiteController::class, 'forgotPasswordUser'])->name('forgotPasswordUser');
 Route::post('/resetPasswordUser', [SiteController::class, 'resetPasswordUser'])->name('resetPasswordUser');
 Route::get('/about', [SiteController::class, 'about'])->name('about');
+Route::get('/event', [SiteController::class, 'event'])->name('event');

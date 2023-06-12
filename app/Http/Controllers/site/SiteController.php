@@ -258,4 +258,8 @@ class SiteController extends Controller
     public function about(Request $request){
         return view('site.about');
     }
+
+    public function event(Request $request){
+        return view('site.event');
+    }
 }
