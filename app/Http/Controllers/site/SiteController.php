@@ -277,6 +277,7 @@ class SiteController extends Controller
     }
 
     public function registerNow(Request $request){
-        return view('site.registerNow');
+        $post = $request->all();
+        print_r($post);
     }
 }
