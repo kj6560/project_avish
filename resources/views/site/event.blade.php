@@ -32,7 +32,7 @@
                     </div>
                     <div class="class-content">
                         <div class="class-title">
-                            <a href="event-page.html">
+                            <a href="/eventDetails/{{Crypt::encryptString($event->id)}}">
                                 <h4>{{$event->event_name}}</h4>
                             </a>
                         </div>
