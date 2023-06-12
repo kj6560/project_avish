@@ -28,16 +28,17 @@
             <div class="col-lg-4 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <img src="{{asset('uploads/events/images/'.$event->image)}}" class="img-fluid" alt="">
+                        <img src="{{asset('uploads/events/images/'.$event->event_image)}}" class="img-fluid" alt="">
                     </div>
                     <div class="class-content">
                         <div class="class-title">
                             <a href="event-page.html">
-                                <h4>Title Here</h4>
+                                <h4>{{$event->event_name}}</h4>
                             </a>
                         </div>
                         <ul class="details list-unstyled">
-                            <li><i class="fa fa-calendar"></i>Mon, Tue</li>
+                            <li><i class="fa fa-calendar"></i>@php $date = '2014-02-25';
+                                date('D', strtotime($date)); @endphp</li>
                             <li><i class="fa fa-clock-o"></i>10:00 - 11:00</li>
                         </ul>
                         <div class="class-text">
