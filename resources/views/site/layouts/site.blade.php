@@ -151,7 +151,11 @@
                         <nav class="navbar navbar-expand-lg">
                             <div class="navbar-collapse">
                                 <ul class="nav navbar-nav">
-                                    @php echo Request::url(); @endphp
+                                    <?php
+
+use Illuminate\Http\Request;
+
+ echo Request::url(); ?>
                                     <li class="{{}}"><a href="/">Home</a></li>
                                     <li class=""><a href="/about">About Us</a></li>
                                     <li class=""><a href="/event">Event</a></li>
