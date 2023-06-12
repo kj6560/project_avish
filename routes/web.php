@@ -19,3 +19,4 @@ Route::get('/about', [SiteController::class, 'about'])->name('about');
 Route::get('/event', [SiteController::class, 'event'])->name('event');
 Route::get('/gallery', [SiteController::class, 'gallery'])->name('gallery');
 Route::get('/contactus', [SiteController::class, 'contactus'])->name('contactus');
+Route::get('/registerNow', [SiteController::class, 'registerNow'])->name('registerNow');

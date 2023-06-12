@@ -138,7 +138,7 @@
             <div class="row">
                 <div class="col-lg-2 col-12 text-md-center">
                     <!-- Logo -->
-                    <a class="my-logo" href="#"><img src="{{asset('images/logo.png')}}"></a>
+                    <a class="my-logo" href="/"><img src="{{asset('images/logo.png')}}"></a>
                     <!-- Button Menu -->
                     <button class="menu-toggle">
                         <span class="bar"></span>
@@ -180,7 +180,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-6 col-12 footer-menu">
                         <div class="footer-logo">
-                            <a class="my-logo" href="#"><img src="{{asset('images/logo-white.png')}}"></a>
+                            <a class="my-logo" href="/"><img src="{{asset('images/logo-white.png')}}"></a>
                         </div>
                         <ul class="list-unstyled">
                             <li>New Delhi | India</li>

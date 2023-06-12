@@ -270,4 +270,8 @@ class SiteController extends Controller
     public function contactus(Request $request){
         return view('site.contactus');
     }
+
+    public function registerNow(Request $request){
+        return view('site.registerNow');
+    }
 }
