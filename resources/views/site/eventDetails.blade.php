@@ -72,7 +72,9 @@
                     <div class="sidebar-classes">
                         <h4>Other Events</h4>
                         @foreach($events as $event_)
-                        @if($event_->id != $event->id)
+                        @php if($event_->id != $event->id){ 
+                        @endphp
+                        
                         <div class="class-inner">
                             <div class="class-image">
                                 <img class="img-fluid" src="{{asset('uploads/events/images/'.$event_->event_image)}}" alt>
@@ -82,7 +84,7 @@
                                 <p>By: Administrator</p>
                             </div>
                         </div>
-                        @endif
+                        @php } @endphp
                         @enforeach
                     </div>
                     <!-- <div class="sidebar-tags">
