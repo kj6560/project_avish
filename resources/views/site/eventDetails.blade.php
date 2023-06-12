@@ -138,23 +138,23 @@
             </div>
             <div class="col-lg-6">
                 <div class="event">
-                </div> -->
+                </div>
                 <div class="event-content">
                     <div class="event-title">
-                        <a href="event-details.html">
-                            <h4>Sports Conclave 2.0 aims</h4>
+                        <a href="/eventDetails/{{Crypt::encryptString($event->id)}}">
+                            <h4>{{$event->event_name}}</h4>
                         </a>
                     </div>
-                    </ul> -->
+                    </ul>
                     <div class="event-text">
-                        <p>To provide a platform for key stakeholders to exchange ideas, share experiences, and discuss strategies for the growth of sports in Bihar. The event seeks to address various aspects such as infrastructure development, athlete training and support, policy reforms, and the overall promotion of sports at the grassroots level. By bringing together experts and enthusiasts, the conclave aims to chart a path towards transforming Bihar into a sporting powerhouse.</p>
+                        <p>{{$event->event_bio}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="my-btn text-center">
-        <a href="event.html" target="_blank" class="main-btn"><span>All Events</span></a>
+        <a href="/event" target="_blank" class="main-btn"><span>All Events</span></a>
     </div>
     </div>
 </section>
