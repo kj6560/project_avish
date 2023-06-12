@@ -254,4 +254,8 @@ class SiteController extends Controller
             return redirect()->back()->with('error', 'Please enter valid email');
         }
     }
+
+    public function about(Request $request){
+        return view('site.about');
+    }
 }
