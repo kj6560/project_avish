@@ -47,7 +47,7 @@
                         </div>
                         <ul class="class-info list-unstyled">
                             <li class="pull-left">Administrator</li>
-                            <li class="pull-right"><a href="/eventDetails/{{Crypt::encryptString($event->id)}}" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>->product_sku)}}" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
+                            <li class="pull-right"><a href="/eventDetails/{{Crypt::encryptString($event->id)}}" class="post-more">Read more<i class="fa fa-angle-double-right"></i></a></li>
                         </ul>
                     </div>
                 </div>
