@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\site\AdminController;
 use App\Http\Controllers\site\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,7 @@ Route::get('/eventDetails/{id}', [SiteController::class, 'eventDetails'])->name(
 Route::get('/gallery', [SiteController::class, 'gallery'])->name('gallery');
 Route::get('/contactus', [SiteController::class, 'contactus'])->name('contactus');
 Route::post('/registerNow', [SiteController::class, 'registerNow'])->name('registerNow');
+
+//admin routes
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth:web')->name('dashboard');
+

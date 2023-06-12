@@ -30,7 +30,11 @@ class SiteController extends Controller
             $attemptData = array("email" => $data['email'], "password" => $data['password']);
             if (Auth::attempt($attemptData)) {
                 $request->session()->regenerate();
-                return redirect('/');
+                if (Auth::user()->user_role == 1) {
+                    return redirect('/');
+                }else{
+                    return redirect('/admin');
+                }
             } else {
                 return back()->withErrors([
                     'errors' => 'user authentication failed.',
