@@ -17,18 +17,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800">
 
     <!-- Font Awesome Css -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <!-- Flaticon -->
-    <link rel="stylesheet" href="fonts/flaticon.css">
+    <link rel="stylesheet" href="{{asset('fonts/flaticon.css')}}">
     <!-- Bootstrap 4 Css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Owl Carousel Css -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
     <!-- Animate Css -->
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <!-- Main Style Css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
 
     <style>
@@ -137,7 +137,7 @@
             <div class="row">
                 <div class="col-lg-2 col-12 text-md-center">
                     <!-- Logo -->
-                    <a class="my-logo" href="#"><img src="images/logo.png"></a>
+                    <a class="my-logo" href="#"><img src="{{asset('images/logo.png')}}"></a>
                     <!-- Button Menu -->
                     <button class="menu-toggle">
                         <span class="bar"></span>
@@ -215,7 +215,7 @@
         <div class="container">
             <div class="main-title text-center">
                 <span class="separator">
-                    <img src="images/classes/quality.png" class="img-fluid" alt="">
+                    <img src="{{asset('images/classes/quality.png')}}" class="img-fluid" alt="">
                 </span>
                 <h2>Our Expertise</h2>
             </div>
@@ -301,7 +301,7 @@
                 <div class="col-lg-6 image">
                     <div class="about-image">
                         <!-- <div class="about-bg"><i class="flaticon-lotus"></i></div> -->
-                        <img class="img-fluid" src="images/about-img.png" alt="">
+                        <img class="img-fluid" src="{{asset('images/about-img.png')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -352,14 +352,14 @@
     <section class="events" id="events">
         <div class="container">
             <div class="main-title text-center">
-                <img src="images/classes/icon.png" class="img-fluid" alt="">
+                <img src="{{asset('images/classes/icon.png')}}" class="img-fluid" alt="">
                 <h2>Events</h2>
             </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="event">
                         <div class="event-img">
-                            <img src="images/classes/g3.jpg" alt="">
+                            <img src="{{asset('images/classes/g3.jpg')}}" alt="">
                         </div>
                         <div class="event-content">
                             <div class="event-title">
@@ -382,7 +382,7 @@
                 <div class="col-lg-6">
                     <div class="event">
                         <div class="event-img">
-                            <img src="images/classes/g3.jpg" alt="">
+                            <img src="{{asset('images/classes/g3.jpg')}}" alt="">
                         </div>
                         <div class="event-content">
                             <div class="event-title">
@@ -450,7 +450,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-6 col-12 footer-menu">
                         <div class="footer-logo">
-                            <a class="my-logo" href="#"><img src="images/logo-white.png"></a>
+                            <a class="my-logo" href="#"><img src="{{asset('images/logo-white.png')}}"></a>
                         </div>
                         <ul class="list-unstyled">
                             <li>New Delhi | India</li>
@@ -513,17 +513,17 @@
     <!-- ========== Js ========== -->
 
     <!-- jQuery -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <!-- Popper Js  -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
     <!-- Bootstrap 4 Js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- Owl Carousel Js -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
     <!--  WOW Js  -->
-    <script src="js/wow.min.js"></script>
+    <script src="{{asset('js/wow.min.js')}}"></script>
     <!-- Custom Js -->
-    <script src="js/custom.js"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
 </body>
 
 </html>
