@@ -74,33 +74,20 @@
                     </form>
                     <div class="sidebar-classes">
                         <h4>Other Events</h4>
+                        @foreach($events as $event_data)
+                        @if($event_data->id != $event->id)
                         <div class="class-inner">
                             <div class="class-image">
-                                <img class="img-fluid" src="images/classes/2.jpg" alt>
+                                <img class="img-fluid" src="{{asset('uploads/events/images/'.$event->event_image)}}" alt>
                             </div>
                             <div class="class-info">
-                                <h5><a href="#">Balance Body &amp; Mind</a></h5>
-                                <p>By: Elina Ekman</p>
+                                <h5><a href="#">{{$event_data->event_name}}</a></h5>
+                                <p>By: Administrator</p>
                             </div>
                         </div>
-                        <div class="class-inner">
-                            <div class="class-image">
-                                <img class="img-fluid" src="images/classes/3.jpg" alt>
-                            </div>
-                            <div class="class-info">
-                                <h5><a href="#">Yoga Classes for Children</a></h5>
-                                <p>By: Razan Smith</p>
-                            </div>
-                        </div>
-                        <div class="class-inner">
-                            <div class="class-image">
-                                <img class="img-fluid" src="images/classes/4.jpg" alt>
-                            </div>
-                            <div class="class-info">
-                                <h5><a href="#">Increased body awareness</a></h5>
-                                <p>By: Lily Garner</p>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
+
                     </div>
                     <div class="sidebar-tags">
                         <h4>Tags</h4>
