@@ -20,4 +20,4 @@ Route::get('/event', [SiteController::class, 'event'])->name('event');
 Route::get('/eventDetails/{id}', [SiteController::class, 'eventDetails'])->name('eventDetails');
 Route::get('/gallery', [SiteController::class, 'gallery'])->name('gallery');
 Route::get('/contactus', [SiteController::class, 'contactus'])->name('contactus');
-Route::get('/registerNow', [SiteController::class, 'registerNow'])->name('registerNow');
+Route::post('/registerNow', [SiteController::class, 'registerNow'])->name('registerNow');
