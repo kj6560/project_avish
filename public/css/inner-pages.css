@@ -5,22 +5,22 @@
 
 
 .page-title-event {
-    background: url("../images/event-header.jpg") center center no-repeat;
+    background: url("{{asset('/images/event-header.jpg')}}") center center no-repeat;
 }
 
 
 .page-title-about {
-    background: url("../images/header.jpg") center center no-repeat;
+    background: url("{{asset('/images/header.jpg')}}") center center no-repeat;
 }
 
 
 .page-title-gallery {
-    background: url("../images/gallery-header.jpg") center center no-repeat;
+    background: url("{{asset('/images/gallery-header.jpg')}}") center center no-repeat;
 }
 
 
 .page-title-contact {
-    background: url("../images/contact-header.jpg") center center no-repeat;
+    background: url("{{asset('/images/contact-header.jpg')}}") center center no-repeat;
 }
 
 .page-title {
