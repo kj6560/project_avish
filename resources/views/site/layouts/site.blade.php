@@ -151,12 +151,13 @@
                         <nav class="navbar navbar-expand-lg">
                             <div class="navbar-collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="/">Home</a></li>
-                                    <li><a href="/about">About Us</a></li>
+                                    @php echo Request::url(); @endphp
+                                    <li class="{{}}"><a href="/">Home</a></li>
+                                    <li class=""><a href="/about">About Us</a></li>
                                     <li class=""><a href="/event">Event</a></li>
                                     <li class=""><a href="/gallery">Gallery</a></li>
-                                    <li><a href="/contactus">Contact Us</a></li>
-                                    <li><a href="/login">Login</a></li>
+                                    <li class=""><a href="/contactus">Contact Us</a></li>
+                                    <li class=""><a href="/login">Login</a></li>
                                 </ul>
                             </div>
                         </nav>
