@@ -71,20 +71,18 @@
                     <a class="register main-btn" href="#"><span>Register Now</span></a>
                     <div class="sidebar-classes">
                         <h4>Other Events</h4>
-                        @foreach($events as $event_)
-                        @php if($event_->id != $event->id){ 
-                        @endphp
-                        
+                        @foreach($events as $event_data)
+                        @if($event_data->id != $event->id)
                         <div class="class-inner">
                             <div class="class-image">
-                                <img class="img-fluid" src="{{asset('uploads/events/images/'.$event_->event_image)}}" alt>
+                                <img class="img-fluid" src="{{asset('uploads/events/images/'.$event_data->event_image)}}" alt>
                             </div>
                             <div class="class-info">
-                                <h5><a href="#">{{$event_->event_name}}</a></h5>
+                                <h5><a href="#">{{ $event_data->event_name }}</a></h5>
                                 <p>By: Administrator</p>
                             </div>
                         </div>
-                        @php } @endphp
+                        @endif
                         @enforeach
                     </div>
                     <!-- <div class="sidebar-tags">
@@ -132,12 +130,12 @@
                     <div class="event-content">
                         <div class="event-title">
                             <a href="event-details.html">
-                                <h4>{{$event->event_name}}</h4>
+                                <h4>{{ $event->event_name }}</h4>
                             </a>
                         </div>
 
                         <div class="event-text">
-                            <p>{{$event->event_bio}}.</p>
+                            <p>{{ $event->event_bio }}.</p>
                         </div>
 
                     </div>
