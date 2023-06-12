@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <!-- Main Style Css -->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/inner-pages.css')}}">
 
 
     <style>
