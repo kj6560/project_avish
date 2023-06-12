@@ -264,7 +264,7 @@ class SiteController extends Controller
     }
 
     public function gallery(Request $request){
-        return view('site.contactus');
+        return view('site.gallery');
     }
 
     public function contactus(Request $request){
