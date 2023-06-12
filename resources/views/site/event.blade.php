@@ -200,7 +200,6 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
                     <div class="form-area mt-5 p-lg-4 p-3">
-                        <!--               main form start -->
                         <form>
                             <div class="row">
                                 <div class="col-sm-12 text-center text-info mb-3 font-secondary">
@@ -231,7 +230,6 @@
                                 </div>
                             </div>
                         </form>
-                        <!--               main form end -->
                     </div>
                 </div>
             </div>
@@ -249,7 +247,7 @@
     </section>
 
 
-</form> -->
+</form>  -->
 
 </html>
 
