@@ -217,7 +217,6 @@
                             <ul class="list-unstyled">
                                 <li><a href="/login">Login</a></li>
                                 <li><a href="/event">Events</a></li>
-                                <li><a href="/registerNow">Register Now</a></li>
                             </ul>
                         </div>
                     </div>
