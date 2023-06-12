@@ -7,7 +7,7 @@
                 <div class="class-details">
                     <div class="class">
                         <div class="class-img">
-                            <img src="images/event-header.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/event-header.jpg')}}" class="img-fluid" alt="">
                         </div>
                         <div class="class-content">
                             <div class="class-title">
