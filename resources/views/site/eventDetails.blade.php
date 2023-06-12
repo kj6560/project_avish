@@ -97,12 +97,12 @@
                             <li>
                                 <a href="#">Event</a>
                             </li>
-                            <!-- <li>
+                           <li>
 										<a href="#">fitness</a>
 									</li>
 									<li>
 										<a href="#">yoga tutorials</a>
-									</li> -->
+									</li> 
                         </ul>
                     </div> -->
                 </div>
