@@ -43,7 +43,7 @@
                                 echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                         </ul>
                         <div class="class-text">
-                            <p>{{substr($event->event_bio,200)}}</p>
+                            <p>{{substr($event->event_bio,0,200)}}</p>
                         </div>
                         <ul class="class-info list-unstyled">
                             <li class="pull-left">Administrator</li>
