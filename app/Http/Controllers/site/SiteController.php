@@ -5,6 +5,7 @@ namespace App\Http\Controllers\site;
 use App\Http\Controllers\Controller;
 use App\Models\Email;
 use App\Models\Event;
+use App\Models\EventGallery;
 use App\Models\EventUsers;
 use App\Models\Team;
 use App\Models\User;
@@ -286,7 +287,8 @@ class SiteController extends Controller
 
     public function gallery(Request $request)
     {
-        return view('site.gallery');
+        $gallery = EventGallery::join('events', 'event_gallery.event_id', '=', 'events.id')->select('events.event_name', 'event_gallery.*')->orderBy("events.id", "desc")->paginate(20);
+        return view('site.gallery',['gallery'=>$gallery]);
     }
 
     public function contactus(Request $request)

@@ -23,6 +23,7 @@
     <div class="container">
         <div class="row">
             <!-- New Item -->
+            @foreach($gallery as $gallery_item)
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
@@ -31,103 +32,9 @@
                     </div>
                 </div>
             </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/2.jpg">
-                            <img src="images/classes/g2.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g4.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g5.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/4.jpg">
-                            <img src="images/classes/g6.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/5.jpg">
-                            <img src="images/classes/g7.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/6.jpg">
-                            <img src="images/classes/g8.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/1.jpg">
-                            <img src="images/classes/g4.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/2.jpg">
-                            <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g2.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g1.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
+            @endforeach
+            <div class="col-12">
+                {!! $category_products->links('pagination::bootstrap-4') !!}
             </div>
             <!-- New Item -->
         </div>
