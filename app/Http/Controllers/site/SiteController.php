@@ -270,7 +270,7 @@ class SiteController extends Controller
 
     public function event(Request $request)
     {
-        return view('site.event', ['events' => Event::all()]);
+        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get()]);
     }
 
     public function eventDetails(Request $request, $id)
