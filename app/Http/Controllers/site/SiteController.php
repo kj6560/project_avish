@@ -266,7 +266,7 @@ class SiteController extends Controller
 
     public function about(Request $request)
     {
-        return view('site.about',['teams' => Team::orderBy('id', 'DESC')->get()]);
+        return view('site.about',['teams' => Team::get()]);
     }
 
     public function event(Request $request)
