@@ -15,8 +15,8 @@ class EventsController extends Controller
      */
     public function index(Request $request)
     {
-        print_r($request->all());
-        $data = Event::all();
+        $event_category = $request->event_category;
+        $data = $event_category >0 ?Event::where('event_category',$event_category)->all():Event::all();
         return response()->json($data);
     }
 
