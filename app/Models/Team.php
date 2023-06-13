@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    protected $table = 'teams';
+    public $table = 'teams';
     use HasFactory;
 }
