@@ -5,7 +5,7 @@
                 <div class="content">
                     <h2>Meet Our Awesome Founder</h2>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>Founder</li>
                     </ul>
                 </div>
