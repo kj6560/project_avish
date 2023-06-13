@@ -288,7 +288,6 @@ class SiteController extends Controller
     public function gallery(Request $request)
     {
         $gallery = EventGallery::join('events', 'event_gallery.event_id', '=', 'events.id')->select('events.event_name', 'event_gallery.*')->orderBy("events.id", "desc")->paginate(20);
-        print_r($gallery);
         return view('site.gallery',['gallery'=>$gallery]);
     }
 
