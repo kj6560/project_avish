@@ -16,7 +16,8 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-        return view('site.index');
+
+        return view('site.index',['events' => Event::all()]);
     }
     public function login(Request $request)
     {
