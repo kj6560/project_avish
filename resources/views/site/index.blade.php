@@ -161,23 +161,25 @@
             <div class="col-lg-6">
                 <div class="event">
                     <div class="event-img">
-                        <img src="{{asset('images/classes/g3.jpg')}}" alt="">
+                        <img src="{{asset('uploads/events/images/'.$event->event_image)}}" alt="">
                     </div>
                     <div class="event-content">
                         <div class="event-title">
                             <a href="event-details.html">
-                                <h4>Title Here</h4>
+                                <h4>{{$event->event_name)}}</h4>
                             </a>
                         </div>
                         <ul class="event-info list-unstyled">
-                            <li class="time"><i class="flaticon-clock-circular-outline"></i>8:00 am 3:00 pm</li>
-                            <li><i class="flaticon-placeholder"></i>New York City</li>
+                            <li class="time"><i class="flaticon-clock-circular-outline"></i>@php $date = $event->event_date;
+                                    echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
+                            <li><i class="flaticon-placeholder"></i>{{$event->event_location}}</li>
                         </ul>
                         <div class="event-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
+                            <p>{{ substr($event->event_bio,0,200) }}</p>
                         </div>
                         <a class="event-more" href="event-details.html">Continue Reading</a>
-                        <div class="event-date"><span>18</span> Feb</div>
+                        <div class="event-date"><span>@php $date = $event->event_date;
+                                    echo date('D', strtotime($date)); @endphp</span> </div>
                     </div>
                 </div>
             </div>
@@ -185,7 +187,7 @@
 
         </div>
         <div class="my-btn text-center">
-            <a href="events.html" target="_blank" class="main-btn"><span>All Events</span></a>
+            <a href="/event" target="_blank" class="main-btn"><span>All Events</span></a>
         </div>
     </div>
 </section>
