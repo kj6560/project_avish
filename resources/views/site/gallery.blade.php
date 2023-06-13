@@ -27,8 +27,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/1.jpg">
-                            <img src="images/classes/g1.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('uploads/event_gallery/'.$gallery_item->image)}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
