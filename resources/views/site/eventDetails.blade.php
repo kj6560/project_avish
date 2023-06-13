@@ -13,7 +13,7 @@ $user = !empty($user) ? $user : null;
                 <div class="class-details">
                     <div class="class">
                         <div class="class-img">
-                            <img src="{{asset('images/event-header.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{asset('uploads/events/images/'.$event->event_image)}}" class="img-fluid" alt="">
                         </div>
                         <div class="class-content">
                             <div class="class-title">
@@ -55,7 +55,7 @@ $user = !empty($user) ? $user : null;
                             <ul class="info-list list-unstyled">
                                 <li hidden>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="event_id"  value="{{$event->id}}">
+                                        <input type="text" class="form-control" name="event_id" value="{{$event->id}}">
                                     </div>
                                 </li>
                                 <li>
@@ -130,7 +130,11 @@ $user = !empty($user) ? $user : null;
             <div class="col-lg-6">
                 <div class="event">
                     <div class="event-img">
-                        <img src="{{asset('uploads/events/images/'.$event->event_image)}}" alt="">
+                        @guest
+                        <a href="/login"><img src="{{asset('images/img.jpg')}}" alt=""></a>
+                        @else
+                        <iframe width="550" height="300" src="{{$event->event_live_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        @endguest
                     </div>
                 </div>
             </div>
