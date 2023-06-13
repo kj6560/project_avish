@@ -99,57 +99,28 @@
             <h2>Our Awesome Team</h2>
         </div>
         <div class="row">
+            @foreach($teams as $team)
             <div class="col-lg-4 col-md-6">
                 <div class="member">
                     <div class="member-img">
-                        <img src="images/team/1.png" class="img-fluid" alt="">
+                        <img src="{{asset('uploads/teams/'.$team->image)}}" class="img-fluid" alt="">
                         <div class="overlay">
                             <div class="social-media text-center">
-                                <a href="https://twitter.com/AbhishekIssar1"><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/in/abhishek-issar-08832627/"><i class="fa fa-linkedin"></i></a>
+                                <a href="{{$team->twitter_link}}"><i class="fa fa-twitter"></i></a>
+                                <a href="{{$team->linked_in_link}}"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="member-info">
-                        <h4 class="member-name">Abhishek Issar</h4>
-                        <span>Founder</span>
+                        <a href="/team/">
+                            <h4 class="member-name">{{$team->name}}</h4>
+                        </a>
+                        <span>{{$team->designation}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="member">
-                    <div class="member-img">
-                        <img src="images/team/2.png" class="img-fluid" alt="">
-                        <div class="overlay">
-                            <div class="social-media text-center">
-                                <a href="https://twitter.com/ishanvermavit"><i class="fa fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/in/ishan-verma-841255168/"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4 class="member-name">Ishan Verma</h4>
-                        <span>Founder</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-3">
-                <div class="member">
-                    <div class="member-img">
-                        <img src="images/team/3.png" class="img-fluid" alt="">
-                        <div class="overlay">
-                            <div class="social-media text-center">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4 class="member-name">Chhavi Sharma</h4>
-                        <span>Founder</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 </section>
