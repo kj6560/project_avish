@@ -22,6 +22,7 @@ Route::get('/eventDetails/{id}', [SiteController::class, 'eventDetails'])->name(
 Route::get('/gallery', [SiteController::class, 'gallery'])->name('gallery');
 Route::get('/contactus', [SiteController::class, 'contactus'])->name('contactus');
 Route::post('/registerNow', [SiteController::class, 'registerNow'])->name('registerNow');
+Route::get('/team/{id}', [SiteController::class, 'teamInfo'])->name('teamInfo');
 
 //admin routes
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth:web')->name('dashboard');

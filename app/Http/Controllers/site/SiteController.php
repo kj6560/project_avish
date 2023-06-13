@@ -269,6 +269,11 @@ class SiteController extends Controller
         return view('site.about',['teams' => Team::get()]);
     }
 
+    public function teamInfo(Request $request,$id)
+    {
+        return view('site.teamInfo',['teams' => Team::where('id', Crypt::decryptString($id))->first()]);
+    }
+
     public function event(Request $request)
     {
         return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get()]);
