@@ -178,7 +178,7 @@
                         <div class="event-text">
                             <p>{{ substr($event->event_bio,0,200) }}</p>
                         </div>
-                        <a class="event-more" href="event-details.html">Continue Reading</a>
+                        <a class="event-more" href="/eventDetails/{{Crypt::encryptString($event->id)}}">Continue Reading</a>
                         <div class="event-date"><span>@php $date = $event->event_date;
                                     echo date('D', strtotime($date)); @endphp</span> </div>
                     </div>
