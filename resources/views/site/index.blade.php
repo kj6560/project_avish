@@ -171,7 +171,7 @@
                         </div>
                         <ul class="event-info list-unstyled">
                             <li class="time"><i class="flaticon-clock-circular-outline"></i>@php $date = $event->event_date;
-                                    echo date('D M Y', strtotime($date)); $date = $event->event_date;
+                                    echo date('D M Y', strtotime($date))," "; $date = $event->event_date;
                                     echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                             <li><i class="flaticon-placeholder"></i>{{$event->event_location}}</li>
                         </ul>
