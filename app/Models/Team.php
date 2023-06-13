@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    public $table = 'teams';
+    public $table = 'team';
     use HasFactory;
 }
