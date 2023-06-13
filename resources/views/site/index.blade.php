@@ -170,16 +170,14 @@
                             </a>
                         </div>
                         <ul class="event-info list-unstyled">
-                            <li class="time"><i class="flaticon-clock-circular-outline"></i>@php $date = $event->event_date;
-                                    echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
+                            <li class="time"><i class="flaticon-clock-circular-outline"></i>8:00 am 3:00 pm</li>
                             <li><i class="flaticon-placeholder"></i>{{$event->event_location}}</li>
                         </ul>
                         <div class="event-text">
                             <p>{{ substr($event->event_bio,0,200) }}</p>
                         </div>
                         <a class="event-more" href="event-details.html">Continue Reading</a>
-                        <div class="event-date"><span>@php $date = $event->event_date;
-                                    echo date('D', strtotime($date)); @endphp</span> </div>
+                        <div class="event-date"><span>18</span> Feb</div>
                     </div>
                 </div>
             </div>
@@ -187,7 +185,7 @@
 
         </div>
         <div class="my-btn text-center">
-            <a href="/event" target="_blank" class="main-btn"><span>All Events</span></a>
+            <a href="events.html" target="_blank" class="main-btn"><span>All Events</span></a>
         </div>
     </div>
 </section>
