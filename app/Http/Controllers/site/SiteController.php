@@ -17,7 +17,7 @@ class SiteController extends Controller
     public function index(Request $request)
     {
 
-        return view('site.index',['events' => Event::all()]);
+        return view('site.index',['events' => Event::limit(2)->orderBy('id', 'DESC')->get()]);
     }
     public function login(Request $request)
     {
@@ -275,7 +275,7 @@ class SiteController extends Controller
 
     public function eventDetails(Request $request, $id)
     {
-        return view('site.eventDetails', ['event' => Event::where('id', Crypt::decryptString($id))->first(), 'events' => Event::limit(3)->get()]);
+        return view('site.eventDetails', ['event' => Event::where('id', Crypt::decryptString($id))->first(), 'events' => Event::limit(3)->orderBy('id', 'DESC')->get()]);
     }
 
     public function gallery(Request $request)
