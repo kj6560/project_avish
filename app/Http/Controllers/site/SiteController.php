@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Email;
 use App\Models\Event;
 use App\Models\EventUsers;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -265,7 +266,7 @@ class SiteController extends Controller
 
     public function about(Request $request)
     {
-        return view('site.about');
+        return view('site.about',['teams' => Team::orderBy('id', 'DESC')->get()]);
     }
 
     public function event(Request $request)
