@@ -309,11 +309,13 @@ class SiteController extends Controller
                     $email = $post['email'];
                     $message = "
                             <p>Dear $user_name,</p><br>
-                            <p>Thank you for registering For the event! We are thrilled to welcome you to this event and appreciate your interest
-                            in our activity.<br>Your registration has been successfully processed, and you are now a part of our upcoming event.
-                            <br>We are committed to providing you with the best possible user experience, and we will work diligently to ensure 
-                            that you have access to all the resources you need.<br>Once again, thank you for registering with us.<br>We look forward 
-                            to serving you and providing you with a seamless user experience.</p>
+                            <p>Thank you for registering For the event! We are thrilled to welcome you to this event and appreciate your interest in our activity.<br>
+                            Your registration has been successfully processed, and you are now a part of our upcoming event.<br>
+                            We are committed to providing you with the best possible user experience, and we will work diligently to ensure that you have access to all the resources you need.<br>
+                            
+                            Note : Please carry a government approved Id card on the day of event for verification<br>
+                            
+                            Thanks<br></p>
                             
                             <br>Best regards,
                             <br>$email_sender_name <br>
