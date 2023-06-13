@@ -145,7 +145,7 @@ $user = !empty($user) ? $user : null;
                     </div>
                     </ul>
                     <div class="event-text">
-                        <p>{{$event->event_bio}}</p>
+                        <p>{{$event->event_objective}}</p>
                     </div>
                 </div>
             </div>
