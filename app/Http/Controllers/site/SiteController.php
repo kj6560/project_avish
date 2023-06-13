@@ -18,7 +18,7 @@ class SiteController extends Controller
     public function index(Request $request)
     {
 
-        return view('site.index',['events' => Event::limit(2)->orderBy('id', 'DESC')->get()]);
+        return view('site.index', ['events' => Event::limit(2)->orderBy('id', 'DESC')->get()]);
     }
     public function login(Request $request)
     {
@@ -34,7 +34,7 @@ class SiteController extends Controller
                 $request->session()->regenerate();
                 if (Auth::user()->user_role == 1) {
                     return redirect('/admin');
-                }else{
+                } else {
                     return redirect('/');
                 }
             } else {
@@ -266,12 +266,12 @@ class SiteController extends Controller
 
     public function about(Request $request)
     {
-        return view('site.about',['teams' => Team::get()]);
+        return view('site.about', ['teams' => Team::get()]);
     }
 
-    public function teamInfo(Request $request,$id)
+    public function teamInfo(Request $request, $id)
     {
-        return view('site.teamInfo',['teams' => Team::where('id', Crypt::decryptString($id))->first()]);
+        return view('site.teamInfo', ['teams' => Team::where('id', Crypt::decryptString($id))->first()]);
     }
 
     public function event(Request $request)
@@ -302,7 +302,31 @@ class SiteController extends Controller
             if ($user) {
                 $event_user = EventUsers::create(['event_id' => $post['event_id'], 'user_id' => $user['id']]);
                 if ($event_user) {
-                    return redirect()->back()->with('success', 'You have successfully registered for this event.');
+                    $user_name = $user->first_name . " " . $user->last_name;
+                    $site_name = env("SITE_NAME", "UNIV SPORTA");
+                    $subject = "Event Registration";
+                    $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
+                    $email = $post['email'];
+                    $message = "
+                            <p>Dear $user_name,</p><br>
+                            <p>Thank you for registering For the event! We are thrilled to welcome you to this event and appreciate your interest
+                            in our activity.<br>Your registration has been successfully processed, and you are now a part of our upcoming event.
+                            <br>We are committed to providing you with the best possible user experience, and we will work diligently to ensure 
+                            that you have access to all the resources you need.<br>Once again, thank you for registering with us.<br>We look forward 
+                            to serving you and providing you with a seamless user experience.</p>
+                            
+                            <br>Best regards,
+                            <br>$email_sender_name <br>
+                            $site_name
+                            ";
+                    $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
+
+                    $sent = Email::sendEmail($mailData);
+                    if ($sent) {
+                        return redirect()->back()->with('success', 'You have successfully registered for this event. Kindly check your email for details.');
+                    } else {
+                        return redirect()->back()->with('error', 'There is some issue with email. plz check your email id and try again.');
+                    }
                 } else {
                     return redirect()->back()->with('error', 'Plz try again later.');
                 }
@@ -360,7 +384,7 @@ class SiteController extends Controller
                             } else {
                                 return redirect()->back()->with('error', 'There is some issue with email. plz check your email id and try again.');
                             }
-                        }else{
+                        } else {
                             return redirect()->back()->with('error', 'There is some issue registration process. plz try again later.');
                         }
                     }
