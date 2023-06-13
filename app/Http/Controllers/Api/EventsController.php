@@ -13,8 +13,9 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        print_r($request->all());
         $data = Event::all();
         return response()->json($data);
     }
