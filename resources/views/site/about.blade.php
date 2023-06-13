@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="member-info">
-                        <a href="/team/{{$team->id}}">
+                        <a href="/team/{{Crypt::encryptString($team->id)}}">
                             <h4 class="member-name">{{$team->name}}</h4>
                         </a>
                         <span>{{$team->designation}}</span>
