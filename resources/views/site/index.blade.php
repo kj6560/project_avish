@@ -187,7 +187,7 @@
 
         </div>
         <div class="my-btn text-center">
-            <a href="events.html" target="_blank" class="main-btn"><span>All Events</span></a>
+            <a href="/event" target="_blank" class="main-btn"><span>All Events</span></a>
         </div>
     </div>
 </section>
