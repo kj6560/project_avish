@@ -34,7 +34,7 @@
             </div>
             @endforeach
             <div class="col-12">
-                {!! $category_products->links('pagination::bootstrap-4') !!}
+                {!! $gallery->links('pagination::bootstrap-4') !!}
             </div>
             <!-- New Item -->
         </div>
