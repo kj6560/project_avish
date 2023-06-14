@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\EventGallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
 class EventsController extends Controller
@@ -18,8 +19,7 @@ class EventsController extends Controller
     public function index(Request $request)
     {
         $event_category = $request->event_category;
-        $data = $event_category >0 ?Event::join('sports', 'sports.id', '=', 'events.event_category')->where('events.event_category',$event_category)->all():Event::all();
-        print_r($data);
+        $data = $event_category >0 ?DB::table('events')->join('sports', 'sports.id', '=', 'events.event_category')->where('events.event_category',$event_category)->all():Event::all();
         return response()->json($data);
     }
 
