@@ -18,8 +18,8 @@ class EventsController extends Controller
      */
     public function index(Request $request)
     {
-        $event_category = $request->event_category;
-        $data = $event_category >0 ?DB::table('events')->join('sports', 'sports.id', '=', 'events.event_category')->where('events.event_category',$event_category)->all():Event::all();
+        $params = $request->all();
+        $data = $params ?DB::table('events')->join('sports', 'sports.id', '=', 'events.event_category')->where('events.event_category',$params['event_category'])->get()->all():Event::all();
         return response()->json($data);
     }
 
