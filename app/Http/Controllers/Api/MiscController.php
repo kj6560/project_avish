@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Event;
 use App\Models\EventGallery;
 use Illuminate\Http\Request;
 
