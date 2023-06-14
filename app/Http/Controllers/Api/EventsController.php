@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class EventsController extends Controller
 {
@@ -63,5 +64,9 @@ class EventsController extends Controller
     public function destroy(Event $Event)
     {
         //
+    }
+    public function getSliders(Request $request){
+        $sliders = Event::select('event_image')->orderby('id','desc')->get();
+        return response()->json($sliders);
     }
 }
