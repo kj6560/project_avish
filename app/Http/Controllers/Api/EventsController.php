@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\EventGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
@@ -66,7 +67,7 @@ class EventsController extends Controller
         //
     }
     public function getSliders(Request $request){
-        $sliders = Event::select('event_image')->orderby('id','desc')->get();
+        $sliders = EventGallery::select('image')->orderby('id','desc')->get();
         return response()->json($sliders);
     }
 }
