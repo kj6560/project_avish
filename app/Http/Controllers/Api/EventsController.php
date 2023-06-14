@@ -20,7 +20,7 @@ class EventsController extends Controller
     {
         $params = $request->all();
         $data = $params ?DB::table('events')->join('sports', 'sports.id', '=', 'events.event_category')->where('events.event_category',$params['category'])->get() : DB::table('events')->join('sports', 'sports.id', '=', 'events.event_category')->get();
-        
+        print_r($data);
         return response()->json($data);
     }
 
