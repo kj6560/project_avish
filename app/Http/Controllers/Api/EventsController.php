@@ -19,6 +19,7 @@ class EventsController extends Controller
     {
         $event_category = $request->event_category;
         $data = $event_category >0 ?Event::join('sports', 'sports.id', '=', 'events.event_category')->where('events.event_category',$event_category)->all():Event::all();
+        print_r($data);
         return response()->json($data);
     }
 
