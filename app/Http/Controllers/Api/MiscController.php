@@ -10,7 +10,7 @@ class MiscController extends Controller
 {
     
     public function getSliders(Request $request){
-        $sliders = EventGallery::select('image')->orderby('id','desc')->get();
-        return response()->json($sliders);
+        $data = EventGallery::select('image')->orderby('id','desc')->get();
+        return response()->json($data);
     }
 }
