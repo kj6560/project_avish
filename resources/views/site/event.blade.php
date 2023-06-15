@@ -5,7 +5,7 @@
         <div class="content">
             <h2>Events</h2>
             <ul class="list-unstyled">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>Events</li>
             </ul>
         </div>
@@ -35,7 +35,8 @@
                             <a href="/eventDetails/{{Crypt::encryptString($event->id)}}">
                                 <h4>{{$event->event_name}}</h4>
                             </a>
-                        </div>
+                        </div> 
+                        echo "hello";
                         <ul class="details list-unstyled">
                             <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
                                 echo date('D', strtotime($date)); @endphp</li>
