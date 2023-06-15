@@ -308,7 +308,6 @@ class SiteController extends Controller
                 $month = date("F", $time);
                 $date = date("d", $time);
                 $event_time = date("h:i A", $time);
-                echo $month,$date,$event_time;die;
                 if ($event_user) {
                     $user_name = $user->first_name . " " . $user->last_name;
                     $site_name = env("SITE_NAME", "UNIV SPORTA");
@@ -318,7 +317,7 @@ class SiteController extends Controller
                     $message = "
                     Dear $user_name,
 
-                    Thank You for registering for “#IOABHARATINPARIS” and be a part of India’s Olympic Movement. 
+                    Thank You for registering for “IOABHARATINPARIS” and be a part of India’s Olympic Movement. 
                     
                     We are happy to confirm your participation for the event:
                     
