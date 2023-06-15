@@ -23,7 +23,9 @@ class AdminController extends Controller
         $data = $request->all();
         if (!empty($data)) {
             unset($data['_token']);
-            $data['icon'] = $request->file('file')->store('images', 'public/uploads/category');
+            $imageName = time().'.'.$request->image->extension();
+            $request->file->move(public_path('/uploads/category/images'), $imageName);
+            $data['icon'] = $imageName;
             $category = Sports::create($data);
             if ($category) {
                 return redirect()->back()->with('success', 'Category created successfully');
