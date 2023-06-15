@@ -23,7 +23,7 @@ class AdminController extends Controller
         $data = $request->all();
         if (!empty($data)) {
             unset($data['_token']);
-            $imageName = time().'.'.$request->image->extension();
+            $imageName = time().'.'.$request->file->extension();
             $request->file->move(public_path('/uploads/category/images'), $imageName);
             $data['icon'] = $imageName;
             $category = Sports::create($data);
