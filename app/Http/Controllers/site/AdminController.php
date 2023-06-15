@@ -9,6 +9,7 @@ class AdminController extends Controller
 {
     //
     public function index(Request $request){
-        echo "here";
+
+        return view('admin.index', []);
     }
 }
