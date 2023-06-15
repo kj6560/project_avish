@@ -19,7 +19,7 @@ class AdminController extends Controller
     public function storeCategory(Request $request){
         $data = $request->all();
         if(!empty($data)){
-            print_r($data);
+            print_r($data);die;
             unset($data['_token']);
             $data['image'] = $data['file']->store('image', 'public/uploads/category/images');
             $category = Sports::create($data);
