@@ -1,5 +1,11 @@
 @extends('site.layouts.site')
 @section('content')
+<style>
+    .class-img{
+        max-height: 500 px;
+        max-width: 300 px;
+    }
+</style>
 <section class="page-title page-title-event" id="page-title">
     <div class="container">
         <div class="content">
