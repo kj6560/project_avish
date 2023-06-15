@@ -288,7 +288,7 @@ class SiteController extends Controller
     public function gallery(Request $request)
     {
         $gallery = EventGallery::join('events', 'event_gallery.event_id', '=', 'events.id')->select('events.event_name', 'event_gallery.*')->orderBy("events.id", "desc")->paginate(20);
-        return view('site.gallery',['gallery'=>$gallery]);
+        return view('site.gallery', ['gallery' => $gallery]);
     }
 
     public function contactus(Request $request)
@@ -301,8 +301,13 @@ class SiteController extends Controller
         $post = $request->all();
         if (!empty($post)) {
             $user = User::where('email', $post['email'])->first();
+            $event = Event::where('id', $post['event_id'])->first();
             if ($user) {
                 $event_user = EventUsers::create(['event_id' => $post['event_id'], 'user_id' => $user['id']]);
+                $time = strtotime($event->event_date);
+                $month = date("F", $time);
+                $date = date("d", $time);
+                $event_time = date("h:i A", $time);
                 if ($event_user) {
                     $user_name = $user->first_name . " " . $user->last_name;
                     $site_name = env("SITE_NAME", "UNIV SPORTA");
@@ -310,14 +315,24 @@ class SiteController extends Controller
                     $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
                     $email = $post['email'];
                     $message = "
-                            <p>Dear $user_name,</p><br>
-                            <p>Thank you for registering For the event! We are thrilled to welcome you to this event and appreciate your interest in our activity.<br>
-                            Your registration has been successfully processed, and you are now a part of our upcoming event.<br>
-                            We are committed to providing you with the best possible user experience, and we will work diligently to ensure that you have access to all the resources you need.<br>
-                            
-                            Note : Please carry a government approved Id card on the day of event for verification<br>
-                            
-                            Thanks<br></p>
+                    Dear $user_name,
+
+                    Thank You for registering for “#IOABHARATINPARIS” and be a part of India’s Olympic Movement. 
+                    
+                    We are happy to confirm your participation for the event:
+                    
+                    Name of the event: The Olympic Day Run
+                    Date: $date $month
+                    Venue: Jawahar Lal Nehru Stadium
+                    Reporting Time: $event_time
+                    
+                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.
+                    
+                    The event flow and other relevant details will be mailed to you shortly. 
+                    
+                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License) on the day of the event for verification.
+                    
+                    Thanking You
                             
                             <br>Best regards,
                             <br>$email_sender_name <br>
