@@ -12,22 +12,20 @@
 
                         <div class="card-body">
                             <div class="mb-3 row">
-                                <label for="html5-text-input" class="col-md-2 col-form-label">Text</label>
+                                <label for="html5-text-input" class="col-md-2 col-form-label">Name</label>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" value="Sneat" id="html5-text-input" />
+                                    <input class="form-control" type="text" name="name" placeholder="Enter Category Name" id="html5-text-input" />
                                 </div>
                             </div>
                             <div class="mb-3 row">
-                                <label for="html5-text-input" class="col-md-2 col-form-label">Text</label>
+                                <label for="html5-text-input" class="col-md-2 col-form-label">Description</label>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" value="Sneat" id="html5-text-input" />
+                                    <input class="form-control" type="text" name="description" id="html5-text-input" />
                                 </div>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="html5-text-input" class="col-md-2 col-form-label">Text</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" value="Sneat" id="html5-text-input" />
-                                </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Icons</label>
+                                <input class="form-control" type="file" name="icon" id="formFile" />
                             </div>
                             <div class="mb-3 row">
                                 <label for="html5-search-input" class="col-md-2 col-form-label"></label>
