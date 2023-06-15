@@ -9,4 +9,11 @@ class UserAddressDetails extends Model
 {
     public $table = "user_address_details";
     use HasFactory; 
+    protected $fillable = [
+        'user_id',
+        'address_line1',
+        'city',
+        'state',
+        'pincode'
+    ];
 } 

@@ -9,4 +9,13 @@ class UserPersonalDetails extends Model
 {
     public $table = "user_personal_details";
     use HasFactory; 
+    protected $fillable = [
+        'user_id',
+        'image',
+        'birthday',
+        'gender',
+        'married',
+        'height',
+        'weight'
+    ];
 } 
