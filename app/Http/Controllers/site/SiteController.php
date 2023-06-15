@@ -321,10 +321,10 @@ class SiteController extends Controller
                     
                     We are happy to confirm your participation for the event:
                     
-                    Name of the event: The Olympic Day Run
-                    Date: $date $month
-                    Venue: Jawahar Lal Nehru Stadium
-                    Reporting Time: $event_time
+                    Name of the event: The Olympic Day Run<br>
+                    Date: $date $month<br>
+                    Venue: Jawahar Lal Nehru Stadium<br>
+                    Reporting Time: $event_time<br><br>
                     
                     Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.
                     
