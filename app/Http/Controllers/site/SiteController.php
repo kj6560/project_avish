@@ -319,7 +319,7 @@ class SiteController extends Controller
 
                     Thank You for registering for 'IOABHARATINPARIS' and be a part of India's Olympic Movement. 
                     
-                    We are happy to confirm your participation for the event:
+                    We are happy to confirm your participation for the event:<br><br>
                     
                     Name of the event: The Olympic Day Run<br>
                     Date: $date $month<br>
