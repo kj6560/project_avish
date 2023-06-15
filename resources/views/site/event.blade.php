@@ -36,7 +36,6 @@
                                 <h4>{{$event->event_name}}</h4>
                             </a>
                         </div> 
-                        echo "hello";
                         <ul class="details list-unstyled">
                             <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
                                 echo date('D', strtotime($date)); @endphp</li>
