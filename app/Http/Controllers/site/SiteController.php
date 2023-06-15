@@ -339,7 +339,7 @@ class SiteController extends Controller
                             $site_name
                             ";
                     $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
-
+                        print_r($mailData);die;
                     $sent = Email::sendEmail($mailData);
                     if ($sent) {
                         return redirect()->back()->with('success', 'You have successfully registered for this event. Kindly check your email for details.');
