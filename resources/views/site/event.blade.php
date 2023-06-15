@@ -1,11 +1,6 @@
 @extends('site.layouts.site')
 @section('content')
-<style>
-    .class-img{
-        max-height: 500 px;
-        max-width: 300 px;
-    }
-</style>
+
 <section class="page-title page-title-event" id="page-title">
     <div class="container">
         <div class="content">
@@ -44,7 +39,7 @@
                         </div> 
                         <ul class="details list-unstyled">
                             <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
-                                echo date('D', strtotime($date)); @endphp</li>
+                                echo "aaa".date('D', strtotime($date)); @endphp</li>
                             <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
                                 echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                         </ul>
