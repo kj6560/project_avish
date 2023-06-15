@@ -11,4 +11,7 @@ class AdminController extends Controller
     public function index(Request $request){
         return view('site.admin.index');
     }
+    public function createCategory(Request $request){
+        return view('site.admin.createCategory');
+    }
 }
