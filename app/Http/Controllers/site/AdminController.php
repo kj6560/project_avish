@@ -14,4 +14,11 @@ class AdminController extends Controller
     public function createCategory(Request $request){
         return view('site.admin.createCategory');
     }
+
+    public function storeCategory(Request $request){
+        $data = $request->all();
+        if(!empty($data)){
+            print_r($data);
+        }
+    }
 }
