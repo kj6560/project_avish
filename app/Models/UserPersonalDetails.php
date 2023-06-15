@@ -9,4 +9,4 @@ class UserPersonalDetails extends Model
 {
     public $table = "user_personal_details";
     use HasFactory; 
-}
+} 
