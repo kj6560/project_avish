@@ -25,7 +25,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Icons</label>
-                                <input class="form-control" type="file" name="icon" id="formFile" />
+                                <input class="form-control" type="file" name="file" id="formFile" />
                             </div>
                             <div class="mb-3 row">
                                 <label for="html5-search-input" class="col-md-2 col-form-label"></label>
