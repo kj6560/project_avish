@@ -9,7 +9,6 @@ class AdminController extends Controller
 {
     //
     public function index(Request $request){
-
-        return view('admin.index');
+        echo "a";
     }
 }
