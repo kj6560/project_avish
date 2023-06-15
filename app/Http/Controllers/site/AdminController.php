@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sports;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -18,7 +19,14 @@ class AdminController extends Controller
     public function storeCategory(Request $request){
         $data = $request->all();
         if(!empty($data)){
-            print_r($data);
+            unset($data['_token']);
+            $data['image'] = $request->file('icon')->store('image', 'public/uploads/category/images');
+            $category = Sports::create($data);
+            if($category){
+                return redirect()->back()->with('success','Category created successfully');
+            }else{
+                return redirect()->back()->with('error','Category creation Failed');
+            }
         }
     }
 }
