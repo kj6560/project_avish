@@ -315,9 +315,9 @@ class SiteController extends Controller
                     $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
                     $email = $post['email'];
                     $message = "
-                    Dear $user_name,
+                    Dear $user_name,<br>
 
-                    Thank You for registering for 'IOABHARATINPARIS' and be a part of India's Olympic Movement. 
+                    Thank You for registering for 'IOABHARATINPARIS' and be a part of India's Olympic Movement.<br><br> 
                     
                     We are happy to confirm your participation for the event:<br><br>
                     
@@ -326,13 +326,13 @@ class SiteController extends Controller
                     Venue: Jawahar Lal Nehru Stadium<br>
                     Reporting Time: $event_time<br><br>
                     
-                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.
+                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.<br>
                     
-                    The event flow and other relevant details will be mailed to you shortly. 
+                    The event flow and other relevant details will be mailed to you shortly. <br>
                     
-                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License) on the day of the event for verification.
+                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License) on the day of the event for verification.<br>
                     
-                    Thanking You
+                    Thanking You<br>
                             
                             <br>Best regards,
                             <br>$email_sender_name <br>
