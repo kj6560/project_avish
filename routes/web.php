@@ -26,4 +26,4 @@ Route::get('/team/{id}', [SiteController::class, 'teamInfo'])->name('teamInfo');
 
 //admin routes
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth:web')->name('dashboard');
-
+Route::get('/dashboard/createCategory', [AdminController::class, 'createCategory'])->middleware('auth:web')->name('createCategory');

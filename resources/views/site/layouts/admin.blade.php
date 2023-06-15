@@ -112,7 +112,7 @@
 
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="/createCategory" class="menu-link">
+                                <a href="/dashboard/createCategory" class="menu-link">
                                     <div data-i18n="Without menu">Create Category</div>
                                 </a>
                             </li>
