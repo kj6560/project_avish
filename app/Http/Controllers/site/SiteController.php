@@ -317,7 +317,7 @@ class SiteController extends Controller
                     $message = "
                     Dear $user_name,
 
-                    Thank You for registering for “IOABHARATINPARIS” and be a part of India’s Olympic Movement. 
+                    Thank You for registering for 'IOABHARATINPARIS' and be a part of India's Olympic Movement. 
                     
                     We are happy to confirm your participation for the event:
                     
