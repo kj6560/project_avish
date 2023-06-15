@@ -25,5 +25,5 @@ Route::post('/registerNow', [SiteController::class, 'registerNow'])->name('regis
 Route::get('/team/{id}', [SiteController::class, 'teamInfo'])->name('teamInfo');
 
 //admin routes
-Route::get('/admin', [AdminController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth:web')->name('dashboard');
 
