@@ -22,6 +22,9 @@ class MiscController extends Controller
     {
         $data = $request->all();
         $user = auth()->user();
+        $image_path = $request->file('image')->store('image', 'public/uploads/profile/profileImage');
+
+        
         if ($data) {
             if ($data['personal_details']) {
                 $personal_details = $data['personal_details'];
@@ -36,6 +39,7 @@ class MiscController extends Controller
                 $user->save();
 
                 $birthday = $personal_details['birthday'];
+                $image = $image_path;
                 $gender = $personal_details['gender'];
                 $married = $personal_details['married'];
                 $height = $personal_details['height'];
@@ -45,6 +49,7 @@ class MiscController extends Controller
                     UserPersonalDetails::create([
                         'user_id' => $user->id,
                         'birthday' => $birthday,
+                        'image' => $image?$image:null,
                         'gender' => $gender,
                         'married' => $married,
                         'height' => $height,
