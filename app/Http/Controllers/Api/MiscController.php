@@ -66,6 +66,7 @@ class MiscController extends Controller
                 $address_details = $data['address_details'];
                 if (UserAddressDetails::where('user_id', $user->id)->count() == 0) {
                     UserAddressDetails::create([
+                        'user_id' => $user->id,
                         'address_line1' => $address_details['address_line1'],
                         'city' => $address_details['city'],
                         'state' => $address_details['state'],
@@ -73,6 +74,7 @@ class MiscController extends Controller
                     ]);
                 } else {
                     UserAddressDetails::where('user_id', $user->id)->update([
+                        'user_id' => $user->id,
                         'address_line1' => $address_details['address_line1'],
                         'city' => $address_details['city'],
                         'state' => $address_details['state'],
