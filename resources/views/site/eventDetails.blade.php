@@ -6,6 +6,17 @@ $user = Auth::user();
 $user = !empty($user) ? $user : null;
 
 @endphp
+<section class="page-title page-title-event" id="page-title">
+            <div class="container">
+                <div class="content">
+                    <h2>Events</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Events</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 <section class="classes">
     <div class="container">
         <div class="row">
