@@ -134,77 +134,18 @@
         </div>
         <div class="row">
             <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g1.jpg">
-                            <img src="images/classes/g1.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
+            @foreach($event_gallery as $gallery)
             <!-- New Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/g2.jpg">
-                            <img src="images/classes/g2.jpg" class="img-fluid" alt="">
+                        <a target="_blank" href="{{asset('uploads/event_gallery/images/'.$gallery->image)}}">
+                            <img src="{{asset('uploads/event_gallery/images/'.$gallery->image)}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g3.jpg">
-                            <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g4.jpg">
-                            <img src="images/classes/g4.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g5.jpg">
-                            <img src="images/classes/g5.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g6.jpg">
-                            <img src="images/classes/g6.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g7.jpg">
-                            <img src="images/classes/g7.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/g8.jpg">
-                            <img src="images/classes/g8.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 </section>
