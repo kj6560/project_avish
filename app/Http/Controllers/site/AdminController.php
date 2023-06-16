@@ -28,7 +28,7 @@ class AdminController extends Controller
                ]);
                if($validatedData){
                 $name = $request->file('image')->getClientOriginalName();
-                $path = $request->file('image')->store('public/uploads/category/images');
+                $path = $request->file('image')->store('public/uploads');
                 $Sports = Sports::create([
                     'name' => $data['name'],
                     'description' => $data['description'],
