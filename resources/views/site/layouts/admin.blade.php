@@ -39,9 +39,14 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{asset('admin/assets')}}/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    @php
+    $success = Session::get('success');
+    $error = Session::get('error');
+    @endphp
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
@@ -249,5 +254,31 @@
                 <!-- Place this tag in your head or just before your close body tag. -->
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
+<script>
+    var success = "{{!empty($success)?$success:'NA'}}";
+    var error = "{{!empty($error)?$error:'NA'}}";
+    if (success != 'NA') {
+        Swal.fire({
+            title: 'Done',
+            text: success,
+            icon: 'success',
+            confirmButtonText: 'Okay',
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/';
+            }
+        })
+    }
+    if (error != 'NA') {
+        Swal.fire({
+            title: 'Failed!',
+            text: error,
+            icon: 'error',
+            confirmButtonText: 'Okay',
+
+        });
+    }
+</script>
 
 </html>
