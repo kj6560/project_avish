@@ -34,7 +34,7 @@ class SiteController extends Controller
             if (Auth::attempt($attemptData)) {
                 $request->session()->regenerate();
                 if (Auth::user()->user_role == 1) {
-                    return redirect('/admin');
+                    return redirect('/dashboard');
                 } else {
                     return redirect('/');
                 }
