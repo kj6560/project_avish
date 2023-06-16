@@ -279,7 +279,7 @@ class SiteController extends Controller
     public function event(Request $request)
     {
         $event_gallery_images =DB::table('event_gallery')->limit(30)->orderBy('id','desc')->get();
-        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get(),'event_gallery'=>$evnet_gallery_images]);
+        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get(),'event_gallery'=>$event_gallery_images]);
     }
 
     public function eventDetails(Request $request, $id)
