@@ -86,7 +86,7 @@ class SiteController extends Controller
                         'email_verified_at' => now(),
                         'password' => $password
                     ]);
-                }else{
+                } else {
                     return redirect()->back()->with('error', 'Email already exists. Please login ');
                 }
 
@@ -327,28 +327,33 @@ class SiteController extends Controller
                     $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
                     $email = $post['email'];
                     $message = "
-                    Dear $user_name,<br>
+                    Dear $user_name,<br><br>
 
-                    Thank You for registering for 'IOABHARATINPARIS' and be a part of India's Olympic Movement.<br><br> 
-                    
+                    Thank You for registering for  IOA\’S BHARAT IN PARIS and be a part of India's Olympic Movement.<br><br>
+
                     We are happy to confirm your participation for the event:<br><br>
-                    
-                    Name of the event: The Olympic Day Run<br>
-                    Date: $date $month<br>
-                    Venue: Jawahar Lal Nehru Stadium<br>
-                    Reporting Time: $event_time<br><br>
-                    
-                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.<br>
-                    
-                    The event flow and other relevant details will be mailed to you shortly. <br>
-                    
-                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License) on the day of the event for verification.<br>
-                    
-                    Thanking You<br>
-                            
-                            <br>Best regards,
-                            <br>$email_sender_name <br>
-                            $site_name
+
+                    Name of the event: IOA BHARAT IN PARIS<br><br>
+                    Date: $date $month<br><br>
+                    Venue: Jawaharlal Nehru Stadium, New Delhi <br><br>
+                    Reporting Time: $time <br><br>
+
+                    BIB Collection for the Race Day:<br><br>
+                    Dates: 21st & 22nd June<br><br>
+                    Time: 11am - 6pm <br><br>
+                    Venue: Jawaharlal Nehru Stadium <br><br>
+
+                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.<br><br>
+
+                    For event flow, route and other relevant details please check the events page or click the link below.<br><br>
+
+                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License/Pan Card) on 21st & 22nd June for uploading on your registered profile and on 23rd June ID verification.<br><br>
+
+                    Thanking You<br><br>
+
+                    Best regards,<br><br>
+                    Administrator<br><br>
+                    UNIV SPORTATECH<br><br>
                             ";
                     $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
 
