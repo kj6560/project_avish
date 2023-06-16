@@ -336,7 +336,7 @@ class SiteController extends Controller
                     Name of the event: IOA BHARAT IN PARIS<br><br>
                     Date: $date $month<br><br>
                     Venue: Jawaharlal Nehru Stadium, New Delhi <br><br>
-                    Reporting Time: $time <br><br>
+                    Reporting Time: 05:00 AM <br><br>
 
                     BIB Collection for the Race Day:<br><br>
                     Dates: 21st & 22nd June<br><br>
