@@ -20,7 +20,7 @@
                         <th scope="row">{{$category->id}}</th>
                         <td>{{$category->name}}</td>
                         <td>{{$category->description}}</td>
-                        <td><img src="{{ asset('storage/'.$category->icon) }}" alt="Avatar" class="rounded-circle" /></td>
+                        <td><img src="{{ asset('storage/uploaded_files/'.$category->icon) }}" alt="Avatar" class="rounded-circle" /></td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
