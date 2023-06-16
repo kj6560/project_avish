@@ -23,14 +23,17 @@ class AdminController extends Controller
         $data = $request->all();
         if (!empty($data)) {
             unset($data['_token']);
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-
-            $imageName = time() . '.' . $request->image->extension();
-
-            $request->image->move(public_path('uploads/category/images'), $imageName);
-
+            $validatedData = $request->validate([
+                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        
+               ]);
+        
+               $name = $request->file('image')->getClientOriginalName();
+        
+               $path = $request->file('image')->store('public/images');
+        
+        
+               echo "path";die;
             return back()
                 ->with('success', 'You have successfully upload image.')
                 ->with('image', $imageName);
