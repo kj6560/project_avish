@@ -32,7 +32,7 @@ class AdminController extends Controller
                 $Sports = Sports::create([
                     'name' => $data['name'],
                     'description' => $data['description'],
-                    'icon'=>$name
+                    'icon'=>$path
                 ]);
                 if($Sports){
                     return back()
