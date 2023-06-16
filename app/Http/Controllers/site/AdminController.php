@@ -20,7 +20,7 @@ class AdminController extends Controller
 
     public function storeCategory(Request $request)
     {
-        echo "reached here";
+        echo "reached here";die;
         $data = $request->all();
         if (!empty($data)) {
             unset($data['_token']);
