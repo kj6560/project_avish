@@ -42,6 +42,25 @@
             max-width: 100%;
 
         }
+
+        .page-title-event {
+            background: url("{{asset('/images/event-header.jpg')}}") center center no-repeat;
+        }
+
+
+        .page-title-about {
+            background: url("{{asset('/images/header.jpg')}}") center center no-repeat;
+        }
+
+
+        .page-title-gallery {
+            background: url("{{asset('/images/gallery-header.jpg')}}") center center no-repeat;
+        }
+
+
+        .page-title-contact {
+            background: url("{{asset('/images/contact-header.jpg')}}") center center no-repeat;
+        }
     </style>
 
 
