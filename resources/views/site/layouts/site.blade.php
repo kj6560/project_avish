@@ -223,7 +223,7 @@
                         <div class="footer-item">
                             <h4>Quick Links</h4>
                             <ul class="list-unstyled">
-                                <li><a href="/home">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="/about">About us</a></li>
                                 <li><a href="/gallery">Gallery</a></li>
                                 <li><a href="/contactus">Contact</a></li>
@@ -250,7 +250,7 @@
         </div>
         <div class="footer-bottom text-center">
             <div class="copyright">
-                <p>&copy; 2023 <a href="www.infinityxlab.com"><span>Infinityxlab</span></a> All rights reserved</p>
+                <p>&copy; 2023 <a href="https://infinityxlab.com/"><span>Infinityxlab</span></a> All rights reserved</p>
             </div>
         </div>
     </footer>
