@@ -7,16 +7,16 @@ $user = !empty($user) ? $user : null;
 
 @endphp
 <section class="page-title page-title-event" id="page-title">
-            <div class="container">
-                <div class="content">
-                    <h2>Events</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="/">Home</a></li>
-                        <li>Events</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="container">
+        <div class="content">
+            <h2>Events</h2>
+            <ul class="list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li>Events</li>
+            </ul>
+        </div>
+    </div>
+</section>
 <section class="classes">
     <div class="container">
         <div class="row">
@@ -159,7 +159,7 @@ $user = !empty($user) ? $user : null;
                         </a>
                     </div>
                     </ul>
-                    <div class="event-text">
+                    <div class="event-text" style="color: #888;">
                         <p>{{$event->event_objective}}</p>
                     </div>
                 </div>
