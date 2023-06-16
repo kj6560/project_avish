@@ -51,4 +51,8 @@ class AdminController extends Controller
             echo "no data ";
         }
     }
+    public function categoryList(Request $request){
+        $Sports = Sports::all();
+        return view('site.admin.categoryList',['categories'=>$Sports]);
+    }
 }

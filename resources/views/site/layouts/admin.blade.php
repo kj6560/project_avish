@@ -122,7 +122,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="layouts-without-navbar.html" class="menu-link">
+                                <a href="/dashboard/categoryList" class="menu-link">
                                     <div data-i18n="Without navbar">List Category</div>
                                 </a>
                             </li>
