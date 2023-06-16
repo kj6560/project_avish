@@ -28,7 +28,7 @@ $user = !empty($user) ? $user : null;
                         </div>
                         <div class="class-content">
                             <div class="class-title">
-                                <a href="class-details.html">
+                                <a href="#">
                                     <h4>{{$event->event_name}}</h4>
                                 </a>
                             </div>
