@@ -69,6 +69,9 @@ class SiteController extends Controller
             if(str_contains($data['number'],'+91')){
                 $data['number'] = str_replace('+91','',$data['number']);
             }
+            if(str_contains($data['number'],'+91-')){
+                $data['number'] = str_replace('+91-','',$data['number']);
+            }
             if ($credentials) {
                 $user = User::where("email", $data['email'])->first();
                 if (empty($user))
