@@ -139,7 +139,7 @@ $error = Session::get('error');
     }
     if (error != 'NA') {
         Swal.fire({
-            title: 'Subscription Failed!',
+            title: 'Failed!',
             text: error,
             icon: 'error',
             confirmButtonText: 'Okay',
