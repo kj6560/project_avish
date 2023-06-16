@@ -137,7 +137,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/1.jpg">
+                        <a target="_blank" href="images/classes/g1.jpg">
                             <img src="images/classes/g1.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -146,7 +146,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/2.jpg">
+                        <a target="_blank" href="images/classes/g2.jpg">
                             <img src="images/classes/g2.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -155,7 +155,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
+                        <a target="_blank" href="images/classes/g3.jpg">
                             <img src="images/classes/g3.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -164,7 +164,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
+                        <a target="_blank" href="images/classes/g4.jpg">
                             <img src="images/classes/g4.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -173,7 +173,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
+                        <a target="_blank" href="images/classes/g5.jpg">
                             <img src="images/classes/g5.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -182,7 +182,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/4.jpg">
+                        <a target="_blank" href="images/classes/g6.jpg">
                             <img src="images/classes/g6.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -191,7 +191,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/5.jpg">
+                        <a target="_blank" href="images/classes/g7.jpg">
                             <img src="images/classes/g7.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
@@ -200,7 +200,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/6.jpg">
+                        <a target="_blank" href="images/classes/g8.jpg">
                             <img src="images/classes/g8.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
