@@ -28,4 +28,4 @@ Route::get('/team/{id}', [SiteController::class, 'teamInfo'])->name('teamInfo');
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth:web')->name('dashboard');
 Route::get('/dashboard/createCategory', [AdminController::class, 'createCategory'])->middleware('auth:web')->name('createCategory');
 Route::post('/dashboard/storeCategory', [AdminController::class, 'storeCategory'])->middleware('auth:web')->name('storeCategory');
-Route::post('/dashboard/categoryList', [AdminController::class, 'categoryList'])->middleware('auth:web')->name('categoryList');
+Route::get('/dashboard/categoryList', [AdminController::class, 'categoryList'])->middleware('auth:web')->name('categoryList');
