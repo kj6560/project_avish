@@ -66,20 +66,30 @@ class SiteController extends Controller
                 'number' => ['required', 'string'],
                 'email' => ['required', 'email']
             ]);
+            if (str_contains($data['number'], '+91-')) {
+                $data['number'] = str_replace('+91-', '', $data['number']);
+            }
+            if (str_contains($data['number'], '+91')) {
+                $data['number'] = str_replace('+91', '', $data['number']);
+            }
 
             if ($credentials) {
                 $user = User::where("email", $data['email'])->first();
-                if (empty($user))
+                if (empty($user)) {
                     $pass_plain = SiteController::getName(8);
-                $password = bcrypt($pass_plain);
-                $user = User::create([
-                    'first_name' => $data['first_name'],
-                    'last_name' => $data['last_name'],
-                    'number' => $data['number'],
-                    'email' => $data['email'],
-                    'email_verified_at' => now(),
-                    'password' => $password
-                ]);
+                    $password = bcrypt($pass_plain);
+                    $user = User::create([
+                        'first_name' => $data['first_name'],
+                        'last_name' => $data['last_name'],
+                        'number' => $data['number'],
+                        'email' => $data['email'],
+                        'email_verified_at' => now(),
+                        'password' => $password
+                    ]);
+                }else{
+                    return redirect()->back()->with('error', 'Email already exists. Please login ');
+                }
+
                 if ($user) {
                     $user_name = $user->first_name . " " . $user->last_name;
                     $site_name = env("SITE_NAME", "UNIV SPORTA");
@@ -278,8 +288,8 @@ class SiteController extends Controller
 
     public function event(Request $request)
     {
-        $event_gallery_images =DB::table('event_gallery')->limit(30)->orderBy('id','desc')->get();
-        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get(),'event_gallery'=>$event_gallery_images]);
+        $event_gallery_images = DB::table('event_gallery')->limit(30)->orderBy('id', 'desc')->get();
+        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get(), 'event_gallery' => $event_gallery_images]);
     }
 
     public function eventDetails(Request $request, $id)
