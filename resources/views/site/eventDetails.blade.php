@@ -11,7 +11,7 @@ $user = !empty($user) ? $user : null;
                 <div class="content">
                     <h2>Events</h2>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>Events</li>
                     </ul>
                 </div>
@@ -159,7 +159,7 @@ $user = !empty($user) ? $user : null;
                         </a>
                     </div>
                     </ul>
-                    <div class="event-text">
+                    <div class="event-text class-text">
                         <p>{{$event->event_objective}}</p>
                     </div>
                 </div>
