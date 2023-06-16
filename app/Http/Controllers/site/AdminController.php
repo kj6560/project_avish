@@ -26,16 +26,27 @@ class AdminController extends Controller
                 'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         
                ]);
+               if($validatedData){
+                $name = $request->file('image')->getClientOriginalName();
+                $path = $request->file('image')->store('public/uploads/category/images');
+                $Sports = Sports::create([
+                    'name' => $data['name'],
+                    'description' => $data['description'],
+                    'icon'=>$name
+                ]);
+                if($Sports){
+                    return back()
+                    ->with('success', 'You have successfully upload image.');
+                }else{
+                    return back()
+                ->with('error', 'You have some error.');
+                }
+               }else{
+                return back()
+                ->with('error', $validatedData->getErros());
+               }
         
-               $name = $request->file('image')->getClientOriginalName();
-        
-               $path = $request->file('image')->store('public/uploads/category/images');
-        
-        
-               echo "path",$path;die;
-            return back()
-                ->with('success', 'You have successfully upload image.')
-                ->with('image', $imageName);
+            
         }else{
             echo "no data ";
         }
