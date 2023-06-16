@@ -84,7 +84,7 @@ $error = Session::get('error');
 
                             <input class="form-control" type="text" name="last_name" placeholder="Last Name" required>
 
-                            <input class="form-control" type="text" name="number" placeholder="Phone Number" required>
+                            <input class="form-control" type="text" name="number" placeholder="Phone Number(987654321) without +91-" required>
 
                             <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
 
