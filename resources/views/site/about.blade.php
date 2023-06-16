@@ -1,5 +1,6 @@
 @extends('site.layouts.site')
 @section('content')
+
 <section class="page-title page-title-about" id="page-title">
     <div class="container">
         <div class="content">
