@@ -39,7 +39,7 @@
                         </div> 
                         <ul class="details list-unstyled">
                             <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
-                                echo "aaa".date('D', strtotime($date)); @endphp</li>
+                                    echo date('D', strtotime($date)); @endphp</li>
                             <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
                                 echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                         </ul>
