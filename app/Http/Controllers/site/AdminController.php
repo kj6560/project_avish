@@ -23,15 +23,17 @@ class AdminController extends Controller
         $data = $request->all();
         if (!empty($data)) {
             unset($data['_token']);
-            $imageName = time().'.'.$request->file->extension();
-            $request->file->move(public_path('/uploads/category/images'), $imageName);
-            $data['icon'] = $imageName;
-            $category = Sports::create($data);
-            if ($category) {
-                return redirect()->back()->with('success', 'Category created successfully');
-            } else {
-                return redirect()->back()->with('error', 'Category creation Failed');
-            }
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $imageName = time() . '.' . $request->image->extension();
+
+            $request->image->move(public_path('uploads/category/images'), $imageName);
+
+            return back()
+                ->with('success', 'You have successfully upload image.')
+                ->with('image', $imageName);
         }
     }
 }
