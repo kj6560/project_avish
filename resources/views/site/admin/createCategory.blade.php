@@ -5,7 +5,7 @@
         <div class="col-xl-6">
             <div class="row">
                 <!-- HTML5 Inputs -->
-                <form action="/dashboard/storeCategory" method="POST">
+                <form action="/dashboard/storeCategory" enctype="multipart/form-data"  method="POST">
                     @csrf
                     <div class="card mb-4">
                         <h5 class="card-header">HTML5 Inputs</h5>
