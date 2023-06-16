@@ -24,7 +24,7 @@ $user = !empty($user) ? $user : null;
                 <div class="class-details">
                     <div class="class">
                         <div class="class-img">
-                            <img src="{{asset('uploads/events/images/'.$event->event_image)}}" class="img-fluid" alt="">
+                            <img src="{{asset($event->event_image)}}" class="img-fluid" alt="">
                         </div>
                         <div class="class-content">
                             <div class="class-title">
