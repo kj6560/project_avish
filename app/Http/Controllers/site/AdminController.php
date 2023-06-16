@@ -29,7 +29,7 @@ class AdminController extends Controller
         
                $name = $request->file('image')->getClientOriginalName();
         
-               $path = $request->file('image')->store('public/uploads/category/images');
+               $path = $request->file('image')->store('storage/uploads','public');
         
         
                echo "path",$path;die;
