@@ -37,6 +37,8 @@ class AdminController extends Controller
             return back()
                 ->with('success', 'You have successfully upload image.')
                 ->with('image', $imageName);
+        }else{
+            echo "no data ";
         }
     }
 }
