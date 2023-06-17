@@ -27,12 +27,11 @@ class AdminController extends Controller
 
             ]);
             if ($validatedData) {
-                if (isset($_FILES['image'])) {
+                if (!empty($_FILES['image'])) {
                     $errors = array();
                     $file_name = $_FILES['image']['name'];
                     $file_size = $_FILES['image']['size'];
                     $file_tmp = $_FILES['image']['tmp_name'];
-                    $file_type = $_FILES['image']['type'];
                     $file_ext = strtolower(explode('.', $_FILES['image']['name'])[1]);
 
                     $extensions = array("jpeg", "jpg", "png");
@@ -46,15 +45,29 @@ class AdminController extends Controller
                     }
 
                     if (empty($errors) == true) {
-                        move_uploaded_file($file_tmp, "uploads/category/images/" . $file_name);
-                        echo "Success";
+                        if(move_uploaded_file($file_tmp, "uploads/category/images/" . $file_name)){
+                            $category = new Sports();
+                            $category->name = $data['name'];
+                            $category->icon = $file_name;
+                            $category->description = $data['description'];
+                            if($category->save()){
+                                return redirect()->back()->with('success', 'category created successfully');
+                            }else{
+                                return redirect()->back()->with('error', 'category creation failed');
+                            }
+                        }else{
+                            return redirect()->back()->with('error', 'failed to upload icon');
+                        }
+                        
                     } else {
                         print_r($errors);
                     }
+                }else{
+                    return redirect()->back()->with('error', 'please select icon');
                 }
             }
         } else {
-            echo "no data ";
+            return redirect()->back()->with('error', 'please fill all fields');
         }
     }
     public function categoryList(Request $request)
