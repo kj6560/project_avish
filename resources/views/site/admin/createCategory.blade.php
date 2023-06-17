@@ -8,7 +8,7 @@
                 <form action="/dashboard/storeCategory" enctype="multipart/form-data"  method="POST">
                     @csrf
                     <div class="card mb-4">
-                        <h5 class="card-header">HTML5 Inputs</h5>
+                        <h5 class="card-header">Create Category</h5>
 
                         <div class="card-body">
                             <div class="mb-3 row">

@@ -20,14 +20,14 @@
                         <th scope="row">{{$event->id}}</th>
                         <td>{{$event->event_name}}</td>
                         <td>{{substr($event->event_objective,0,50)."..."}}</td>
-                        <td><img src="{{asset('uploads/events/images/'.$event->image)}}" alt="Avatar" class="rounded-circle" /></td>
+                        <td><img src="{{asset('uploads/events/images/'.$event->event_image)}}" height="50" width="50" alt="Avatar" class="rounded-circle" /></td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                                    <a class="dropdown-item" href="/dashboard/editEvents/{{$event->id}}"><i class="bx bx-edit-alt me-2"></i> Edit</a>
                                     <a class="dropdown-item" href="/dashboard/deleteEvent/{{$event->id}}"><i class="bx bx-trash me-2"></i> Delete</a>
                                 </div>
                             </div>

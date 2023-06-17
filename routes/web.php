@@ -35,6 +35,12 @@ Route::get('/dashboard/deleteCategory/{id}', [AdminController::class, 'deleteCat
 //events
 
 Route::get('/dashboard/createEvents', [AdminController::class, 'createEvents'])->middleware('auth:web')->name('createEvents');
+Route::get('/dashboard/editEvents/{id}', [AdminController::class, 'editEvents'])->middleware('auth:web')->name('editEvents');
 Route::post('/dashboard/storeEvent', [AdminController::class, 'storeEvent'])->middleware('auth:web')->name('storeEvent');
 Route::get('/dashboard/eventsList', [AdminController::class, 'eventsList'])->middleware('auth:web')->name('eventList');
 Route::get('/dashboard/deleteEvent/{id}', [AdminController::class, 'deleteEvent'])->middleware('auth:web')->name('deleteEvent');
+
+//Event users
+
+Route::get('/dashboard/eventUsers', [AdminController::class, 'eventUsers'])->middleware('auth:web')->name('eventUsers');
+Route::get('/dashboard/downloadEventUsers', [AdminController::class, 'downloadEventUsers'])->middleware('auth:web')->name('downloadEventUsers');

@@ -25,8 +25,8 @@ class Controller extends BaseController
             $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
         }
 
-        if ($file_size > 2097152) {
-            $errors[] = 'File size must be excately 2 MB';
+        if ($file_size > 209715200) {
+            $errors[] = 'File size must be excately 200 MB';
         }
         move_uploaded_file($file_tmp, "uploads/" . $path . "/" . $file_name);
         $response = array();
