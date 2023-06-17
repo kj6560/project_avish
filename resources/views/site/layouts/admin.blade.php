@@ -130,6 +130,27 @@
                         </ul>
                     </li>
 
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-layout"></i>
+                            <div data-i18n="Layouts">Events</div>
+                        </a>
+
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="/dashboard/createEvents" class="menu-link">
+                                    <div data-i18n="Without menu">Create Events</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/dashboard/EventsList" class="menu-link">
+                                    <div data-i18n="Without navbar">List Events</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
 
                 </ul>
             </aside>
