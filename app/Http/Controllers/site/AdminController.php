@@ -28,41 +28,22 @@ class AdminController extends Controller
             ]);
             if ($validatedData) {
                 if (!empty($_FILES['image'])) {
-                    $errors = array();
-                    $file_name = $_FILES['image']['name'];
-                    $file_size = $_FILES['image']['size'];
-                    $file_tmp = $_FILES['image']['tmp_name'];
-                    $file_ext = strtolower(explode('.', $_FILES['image']['name'])[1]);
-
-                    $extensions = array("jpeg", "jpg", "png");
-
-                    if (in_array($file_ext, $extensions) === false) {
-                        $errors[] = "extension not allowed, please choose a JPEG or PNG file.";
-                    }
-
-                    if ($file_size > 2097152) {
-                        $errors[] = 'File size must be excately 2 MB';
-                    }
-
-                    if (empty($errors) == true) {
-                        if(move_uploaded_file($file_tmp, "uploads/category/images/" . $file_name)){
-                            $category = new Sports();
-                            $category->name = $data['name'];
-                            $category->icon = $file_name;
-                            $category->description = $data['description'];
-                            if($category->save()){
-                                return redirect()->back()->with('success', 'category created successfully');
-                            }else{
-                                return redirect()->back()->with('error', 'category creation failed');
-                            }
-                        }else{
-                            return redirect()->back()->with('error', 'failed to upload icon');
+                    
+                    $upload = $this->uploadFile($_FILES['image']);
+                    if (empty($upload['errors']) == true) {
+                        $category = new Sports();
+                        $category->name = $data['name'];
+                        $category->icon = $upload['file_name'];
+                        $category->description = $data['description'];
+                        if ($category->save()) {
+                            return redirect()->back()->with('success', 'category created successfully');
+                        } else {
+                            return redirect()->back()->with('error', 'category creation failed');
                         }
-                        
                     } else {
-                        print_r($errors);
+                        return redirect()->back()->with('error', 'Error uploading icon');
                     }
-                }else{
+                } else {
                     return redirect()->back()->with('error', 'please select icon');
                 }
             }
