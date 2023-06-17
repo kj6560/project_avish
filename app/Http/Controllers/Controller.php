@@ -41,6 +41,7 @@ class Controller extends BaseController
         $response['errors'] = false;
         $response['success'] = false;
         $response['file_name'] = $filename;
+        echo "uploads/" . $path . "/" . $filename;
         if (file_exists("uploads/" . $path . "/" . $filename) && unlink($filename)) {
             $response['errors'] = true;
             $response['success'] = true;
