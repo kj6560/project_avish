@@ -1,11 +1,12 @@
 @extends('site.layouts.site')
 @section('content')
+
 <section class="page-title page-title-event" id="page-title">
     <div class="container">
         <div class="content">
             <h2>Events</h2>
             <ul class="list-unstyled">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>Events</li>
             </ul>
         </div>
@@ -35,10 +36,10 @@
                             <a href="/eventDetails/{{Crypt::encryptString($event->id)}}">
                                 <h4>{{$event->event_name}}</h4>
                             </a>
-                        </div>
+                        </div> 
                         <ul class="details list-unstyled">
                             <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
-                                echo date('D', strtotime($date)); @endphp</li>
+                                    echo date('D d M Y', strtotime($date)); @endphp</li>
                             <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
                                 echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                         </ul>
@@ -133,77 +134,18 @@
         </div>
         <div class="row">
             <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/1.jpg">
-                            <img src="images/classes/g1.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
+            @foreach($event_gallery as $gallery)
             <!-- New Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="class">
                     <div class="class-img">
-                        <a target="_blank" href="images/classes/2.jpg">
-                            <img src="images/classes/g2.jpg" class="img-fluid" alt="">
+                        <a target="_blank" href="{{asset('uploads/event_gallery/images/'.$gallery->image)}}">
+                            <img src="{{asset('uploads/event_gallery/images/'.$gallery->image)}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g3.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g4.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/3.jpg">
-                            <img src="images/classes/g5.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/4.jpg">
-                            <img src="images/classes/g6.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/5.jpg">
-                            <img src="images/classes/g7.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- New Item -->
-            <div class="col-lg-3 col-md-6">
-                <div class="class">
-                    <div class="class-img">
-                        <a target="_blank" href="images/classes/6.jpg">
-                            <img src="images/classes/g8.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 </section>

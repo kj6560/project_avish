@@ -6,6 +6,17 @@ $user = Auth::user();
 $user = !empty($user) ? $user : null;
 
 @endphp
+<section class="page-title page-title-event" id="page-title">
+    <div class="container">
+        <div class="content">
+            <h2>Events</h2>
+            <ul class="list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li>Events</li>
+            </ul>
+        </div>
+    </div>
+</section>
 <section class="classes">
     <div class="container">
         <div class="row">
@@ -17,13 +28,13 @@ $user = !empty($user) ? $user : null;
                         </div>
                         <div class="class-content">
                             <div class="class-title">
-                                <a href="class-details.html">
+                                <a href="#">
                                     <h4>{{$event->event_name}}</h4>
                                 </a>
                             </div>
                             <ul class="details list-unstyled">
                                 <li><i class="fa fa-calendar"></i>@php $date = $event->event_date;
-                                    echo date('D', strtotime($date)); @endphp</li>
+                                    echo date('D d M Y', strtotime($date)); @endphp</li>
                                 <li><i class="fa fa-clock-o"></i>@php $date = $event->event_date;
                                     echo date('H:i', strtotime($date)); echo " ",date('H:i', strtotime($date)) > 12 ?"PM":"AM" @endphp</li>
                             </ul>
@@ -148,7 +159,7 @@ $user = !empty($user) ? $user : null;
                         </a>
                     </div>
                     </ul>
-                    <div class="event-text">
+                    <div class="event-text" style="color: #888;">
                         <p>{{$event->event_objective}}</p>
                     </div>
                 </div>

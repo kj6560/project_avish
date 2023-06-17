@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -34,7 +35,7 @@ class SiteController extends Controller
             if (Auth::attempt($attemptData)) {
                 $request->session()->regenerate();
                 if (Auth::user()->user_role == 1) {
-                    return redirect('/admin');
+                    return redirect('/dashboard');
                 } else {
                     return redirect('/');
                 }
@@ -65,20 +66,30 @@ class SiteController extends Controller
                 'number' => ['required', 'string'],
                 'email' => ['required', 'email']
             ]);
+            if (str_contains($data['number'], '+91-')) {
+                $data['number'] = str_replace('+91-', '', $data['number']);
+            }
+            if (str_contains($data['number'], '+91')) {
+                $data['number'] = str_replace('+91', '', $data['number']);
+            }
 
             if ($credentials) {
                 $user = User::where("email", $data['email'])->first();
-                if (empty($user))
+                if (empty($user)) {
                     $pass_plain = SiteController::getName(8);
-                $password = bcrypt($pass_plain);
-                $user = User::create([
-                    'first_name' => $data['first_name'],
-                    'last_name' => $data['last_name'],
-                    'number' => $data['number'],
-                    'email' => $data['email'],
-                    'email_verified_at' => now(),
-                    'password' => $password
-                ]);
+                    $password = bcrypt($pass_plain);
+                    $user = User::create([
+                        'first_name' => $data['first_name'],
+                        'last_name' => $data['last_name'],
+                        'number' => $data['number'],
+                        'email' => $data['email'],
+                        'email_verified_at' => now(),
+                        'password' => $password
+                    ]);
+                } else {
+                    return redirect()->back()->with('error', 'Email already exists. Please login ');
+                }
+
                 if ($user) {
                     $user_name = $user->first_name . " " . $user->last_name;
                     $site_name = env("SITE_NAME", "UNIV SPORTA");
@@ -277,7 +288,8 @@ class SiteController extends Controller
 
     public function event(Request $request)
     {
-        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get()]);
+        $event_gallery_images = DB::table('event_gallery')->limit(30)->orderBy('id', 'desc')->get();
+        return view('site.event', ['events' => Event::orderBy('id', 'DESC')->get(), 'event_gallery' => $event_gallery_images]);
     }
 
     public function eventDetails(Request $request, $id)
@@ -315,28 +327,33 @@ class SiteController extends Controller
                     $email_sender_name = env("EMAIL_SENDER_NAME", "UNIV SPORTA");
                     $email = $post['email'];
                     $message = "
-                    Dear $user_name,<br>
+                    Dear $user_name,<br><br>
 
-                    Thank You for registering for 'IOABHARATINPARIS' and be a part of India's Olympic Movement.<br><br> 
-                    
+                    Thank You for registering for  IOA’S BHARAT IN PARIS and be a part of India's Olympic Movement.<br><br>
+
                     We are happy to confirm your participation for the event:<br><br>
-                    
-                    Name of the event: The Olympic Day Run<br>
-                    Date: $date $month<br>
-                    Venue: Jawahar Lal Nehru Stadium<br>
-                    Reporting Time: $event_time<br><br>
-                    
-                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.<br>
-                    
-                    The event flow and other relevant details will be mailed to you shortly. <br>
-                    
-                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License) on the day of the event for verification.<br>
-                    
-                    Thanking You<br>
-                            
-                            <br>Best regards,
-                            <br>$email_sender_name <br>
-                            $site_name
+
+                    Name of the event: IOA BHARAT IN PARIS<br><br>
+                    Date: $date $month<br><br>
+                    Venue: Jawaharlal Nehru Stadium, New Delhi <br><br>
+                    Reporting Time: 05:00 AM <br><br>
+
+                    BIB Collection for the Race Day:<br><br>
+                    Dates: 21st & 22nd June<br><br>
+                    Time: 11am - 6pm <br><br>
+                    Venue: Jawaharlal Nehru Stadium <br><br>
+
+                    Indian Olympic Association in partnership with UNIV Sportatech is committed to provide you with the best possible user experience.<br><br>
+
+                    For event flow, route and other relevant details please check the events page or click the link below.<br><br>
+
+                    Note: Kindly carry a Government Approved ID Card (Aadhaar/Driving License/Pan Card) on 21st & 22nd June for uploading on your registered profile and on 23rd June ID verification.<br><br>
+
+                    Thanking You<br><br>
+
+                    Best regards,<br><br>
+                    Administrator<br><br>
+                    UNIV SPORTATECH<br><br>
                             ";
                     $mailData = array("email" => $user->email, "first_name" => $user->first_name, "last_name" => $user->last_name, "subject" => $subject, "message" => $message);
 

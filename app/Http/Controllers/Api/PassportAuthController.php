@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Email;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class PassportAuthController extends Controller
@@ -65,8 +66,12 @@ class PassportAuthController extends Controller
         if (!empty($user)) {
             if (Hash::check($request->password, $user['password'])) {
                 $token = $user->createToken('LaravelAuthApp')->accessToken;
-                return response()->json(['token' => $token, 'user' => $user], 200);
-            } else {
+                $reg_user = DB::table('users')
+                            ->leftJoin("user_personal_details", "user_personal_details.user_id", "=", "users.id")
+                            ->leftJoin("user_address_details", "user_address_details.user_id", "=", "users.id")
+                            ->where("users.id", $user->id)->first();
+                return response()->json(['token' => $token, 'user' => $reg_user], 200);
+            } else { 
                 return response()->json(['error' => 'Unauthorised'], 401);
             }
         } else {

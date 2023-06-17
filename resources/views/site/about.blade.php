@@ -1,5 +1,6 @@
 @extends('site.layouts.site')
 @section('content')
+
 <section class="page-title page-title-about" id="page-title">
     <div class="container">
         <div class="content">
@@ -79,7 +80,7 @@
         <div class="content">
             <h3>ABOUT UNIV SPORTA TECH</h3>
             <p>DERIVED FROM UNIVERSE, "UNIV" STANDS FOR ONE-STOP SOLUTION TO CREATE A <br>PROFITABLE ECOSYSTEM FOR SPORTS, GAMING, MEDIA & ENTERTAINMENT VENTURES.</p>
-            <a href="#" class="main-btn custom-btn"><span>Register Now</span></a>
+            
         </div>
     </div>
 </section>

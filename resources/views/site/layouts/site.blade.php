@@ -42,6 +42,25 @@
             max-width: 100%;
 
         }
+
+        .page-title-event {
+            background: url("{{asset('/images/event-header.jpg')}}") center center no-repeat;
+        }
+
+
+        .page-title-about {
+            background: url("{{asset('/images/header.jpg')}}") center center no-repeat;
+        }
+
+
+        .page-title-gallery {
+            background: url("{{asset('/images/gallery-header.jpg')}}") center center no-repeat;
+        }
+
+
+        .page-title-contact {
+            background: url("{{asset('/images/contact-header.jpg')}}") center center no-repeat;
+        }
     </style>
 
 
@@ -90,9 +109,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tel:09818369490">
+                                        <a href="tel:8744955443">
                                             <i class="fa fa-phone"></i>
-                                            +91 - 9818369490
+                                            +91 - 8744955443
                                         </a>
                                     </li>
                                     <li>
@@ -192,7 +211,7 @@
                         <ul class="list-unstyled">
                             <li>New Delhi | India</li>
                             <li>info@univsportatech.in</li>
-                            <li>+91- 9818369490</li>
+                            <li>+91- 8744955443</li>
                         </ul>
                         <ul class="list-unstyled social-media">
                             <li><a href="https://twitter.com/univsportatech/"><i class="fa fa-twitter"></i></a></li>
@@ -204,7 +223,7 @@
                         <div class="footer-item">
                             <h4>Quick Links</h4>
                             <ul class="list-unstyled">
-                                <li><a href="/home">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="/about">About us</a></li>
                                 <li><a href="/gallery">Gallery</a></li>
                                 <li><a href="/contactus">Contact</a></li>
@@ -231,7 +250,7 @@
         </div>
         <div class="footer-bottom text-center">
             <div class="copyright">
-                <p>&copy; 2023 <a href="www.infinityxlab.com"><span>Infinityxlab</span></a> All rights reserved</p>
+                <p>&copy; 2023 <a href="https://infinityxlab.com/"><span>Infinityxlab</span></a> All rights reserved</p>
             </div>
         </div>
     </footer>

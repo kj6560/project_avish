@@ -96,7 +96,7 @@
                     <p>Science is the foundation of excellence and UNIV takes science and technology as the base value for a high-excellence future of 'BHARAT'. In any of our focus sectors of business (Sports, Gaming or Media and Entertainment) the spirit, individual excellence , cognitive science, innovation, and inculcate the spirit of competing fearlessly. Winning is an outcome of the process.</p>
                     <p>UNIV celebrates the spirit of Self-belief: The human mind is unconquerable and limitless. No sporting success has been accomplished without the mind's indomitabl spirit of self-belief.</p>
 
-                    <a href="contact-us.html" target="_blank" class="main-btn"><span>Read More</span></a>
+                    <a href="about"  class="main-btn"><span>Read More</span></a>
                 </div>
             </div>
             <div class="col-lg-6 image">
@@ -140,7 +140,7 @@
             <h3>UNIV SPORTS - MISSION CRITICAL</h3>
             <p>We understand that the 2024 Paris Olympics will be a milestone year for 'Bharat' in our sporting journey. India's top athletes are already deep into their high-performance sessions. We are determined to aid the athletes and their respective partner federations in presenting them with the right partners.</p><br>
             <p>India's young brigade in shooting, weightlifting and badminton have already booked their quota berths in world's largest sporting stage - the Olympics 2024. UNIV Sports aims to support this ecosystem with technology, science, advocacy and investments.</p>
-            <a href="#" class="main-btn custom-btn"><span>Register Now</span></a>
+            
         </div>
     </div>
 </section>
