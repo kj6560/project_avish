@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use App\Models\Sports;
 use Illuminate\Http\Request;
 
@@ -64,5 +65,11 @@ class AdminController extends Controller
         } else {
             return redirect()->back()->with('error', 'category deletion failed');
         }
+    }
+
+    public function eventsList(Request $request)
+    {
+        $events = Event::all();
+        return view('site.admin.eventsList', ['events' => $events]);
     }
 }

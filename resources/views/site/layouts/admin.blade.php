@@ -143,7 +143,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="/dashboard/EventsList" class="menu-link">
+                                <a href="/dashboard/eventsList" class="menu-link">
                                     <div data-i18n="Without navbar">List Events</div>
                                 </a>
                             </li>
