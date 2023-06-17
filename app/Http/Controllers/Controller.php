@@ -11,7 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function uploadFile($file,$path)
+    public function uploadFile($file, $path)
     {
         $errors = array();
         $file_name = $file['name'];
@@ -28,11 +28,24 @@ class Controller extends BaseController
         if ($file_size > 2097152) {
             $errors[] = 'File size must be excately 2 MB';
         }
-        move_uploaded_file($file_tmp, "uploads/".$path ."/". $file_name);
+        move_uploaded_file($file_tmp, "uploads/" . $path . "/" . $file_name);
         $response = array();
         $response['errors'] = $errors;
         $response['success'] = false;
         $response['file_name'] = $file_name;
+        return $response;
+    }
+    public function deleteFile($filename, $path)
+    {
+        $response = array();
+        $response['errors'] = false;
+        $response['success'] = false;
+        $response['file_name'] = $filename;
+        if (file_exists("uploads/" . $path . "/" . $filename) && unlink($filename)) {
+            $response['errors'] = true;
+            $response['success'] = true;
+            return $response;
+        }
         return $response;
     }
 }
