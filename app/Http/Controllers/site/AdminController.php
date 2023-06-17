@@ -28,8 +28,8 @@ class AdminController extends Controller
             ]);
             if ($validatedData) {
                 if (!empty($_FILES['image'])) {
-                    
-                    $upload = $this->uploadFile($_FILES['image'],"category/images");
+
+                    $upload = $this->uploadFile($_FILES['image'], "category/images");
                     if (empty($upload['errors']) == true) {
                         $category = new Sports();
                         $category->name = $data['name'];
@@ -55,5 +55,14 @@ class AdminController extends Controller
     {
         $Sports = Sports::all();
         return view('site.admin.categoryList', ['categories' => $Sports]);
+    }
+    public function deleteCategory(Request $request, $id)
+    {
+        $Sports = Sports::find($id);
+        if (!empty($id) && Sports::destroy($id) && $this->deleteFile($Sports->icon, "category/images")) {
+            return redirect()->back()->with('success', 'category deletion successfully');
+        } else {
+            return redirect()->back()->with('error', 'category deletion failed');
+        }
     }
 }
