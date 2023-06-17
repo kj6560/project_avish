@@ -41,7 +41,7 @@ class AdminController extends Controller
                             return redirect()->back()->with('error', 'category creation failed');
                         }
                     } else {
-                        return redirect()->back()->with('error', 'Error uploading icon');
+                        return redirect()->back()->with('error', $upload['errors']);
                     }
                 } else {
                     return redirect()->back()->with('error', 'please select icon');
