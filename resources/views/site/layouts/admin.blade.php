@@ -25,15 +25,13 @@
     <link rel="stylesheet" href="{{asset('admin/assets')}}/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="{{asset('admin/assets')}}/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{asset('admin/assets')}}/css/demo.css" />
+    <link rel="stylesheet" href="{{asset('admin/assets')}}/css/bootstrap-datetimepicker.min.css" />
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{asset('admin/assets')}}/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <link rel="stylesheet" href="{{asset('admin/assets')}}/vendor/libs/apex-charts/apex-charts.css" />
 
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
     <script src="{{asset('admin/assets')}}/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -130,6 +128,41 @@
                         </ul>
                     </li>
 
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-layout"></i>
+                            <div data-i18n="Layouts">Events</div>
+                        </a>
+
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="/dashboard/createEvents" class="menu-link">
+                                    <div data-i18n="Without menu">Create Events</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/dashboard/eventsList" class="menu-link">
+                                    <div data-i18n="Without navbar">List Events</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-layout"></i>
+                            <div data-i18n="Layouts">Event Users</div>
+                        </a>
+
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="/dashboard/eventUsers" class="menu-link">
+                                    <div data-i18n="Without menu">Event Users</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
 
                 </ul>
             </aside>
@@ -148,12 +181,12 @@
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
-                        <div class="navbar-nav align-items-center">
+                        <!-- <div class="navbar-nav align-items-center">
                             <div class="nav-item d-flex align-items-center">
                                 <i class="bx bx-search fs-4 lh-0"></i>
                                 <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
                             </div>
-                        </div>
+                        </div> -->
                         <!-- /Search -->
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -247,12 +280,14 @@
 
                 <!-- Main JS -->
                 <script src="{{asset('admin/assets')}}/js/main.js"></script>
+                <script src="{{asset('admin/assets')}}/js/bootstrap-datetimepicker.min.js"></script>
 
                 <!-- Page JS -->
                 <script src="{{asset('admin/assets')}}/js/dashboards-analytics.js"></script>
 
                 <!-- Place this tag in your head or just before your close body tag. -->
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
 </body>
 <script>
     var success = "{{!empty($success)?$success:'NA'}}";
@@ -280,5 +315,6 @@
         });
     }
 </script>
+
 
 </html>
