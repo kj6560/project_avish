@@ -18,8 +18,8 @@
                     @foreach($events as $event)
                     <tr>
                         <th scope="row">{{$event->id}}</th>
-                        <td>{{$event->name}}</td>
-                        <td>{{$event->description}}</td>
+                        <td>{{$event->event_name}}</td>
+                        <td>{{substr($event->event_objective,0,50)."..."}}</td>
                         <td><img src="{{asset('uploads/Event/images/'.$event->image)}}" alt="Avatar" class="rounded-circle" /></td>
                         <td>
                             <div class="dropdown">
