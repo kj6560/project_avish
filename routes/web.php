@@ -29,3 +29,4 @@ Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth:we
 Route::get('/dashboard/createCategory', [AdminController::class, 'createCategory'])->middleware('auth:web')->name('createCategory');
 Route::post('/dashboard/storeCategory', [AdminController::class, 'storeCategory'])->middleware('auth:web')->name('storeCategory');
 Route::get('/dashboard/categoryList', [AdminController::class, 'categoryList'])->middleware('auth:web')->name('categoryList');
+Route::get('/dashboard/deleteCategory/{id}', [AdminController::class, 'deleteCategory'])->middleware('auth:web')->name('deleteCategory');
