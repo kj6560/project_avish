@@ -29,7 +29,7 @@ class AdminController extends Controller
             if ($validatedData) {
                 if (!empty($_FILES['image'])) {
                     
-                    $upload = $this->uploadFile($_FILES['image']);
+                    $upload = $this->uploadFile($_FILES['image'],"category/images");
                     if (empty($upload['errors']) == true) {
                         $category = new Sports();
                         $category->name = $data['name'];
