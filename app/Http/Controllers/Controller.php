@@ -46,6 +46,8 @@ class Controller extends BaseController
             $response['errors'] = true;
             $response['success'] = true;
             return $response;
+        }else{
+            echo "file doesn't exist";
         }
         return $response;
     }
