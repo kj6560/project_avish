@@ -11,7 +11,7 @@
                         <th>Event Id</th>
                         <th>Event Name</th>
                         <th>Event Description</th>
-                        <th>Event Icon</th>
+                        <th>Event Image</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,7 +20,7 @@
                         <th scope="row">{{$event->id}}</th>
                         <td>{{$event->event_name}}</td>
                         <td>{{substr($event->event_objective,0,50)."..."}}</td>
-                        <td><img src="{{asset('uploads/Event/images/'.$event->image)}}" alt="Avatar" class="rounded-circle" /></td>
+                        <td><img src="{{asset('uploads/events/images/'.$event->image)}}" alt="Avatar" class="rounded-circle" /></td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
